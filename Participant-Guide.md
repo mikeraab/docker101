@@ -68,11 +68,11 @@ Containers have been around for many years.  Docker created a technology that wa
 
 History of Linux Containers
 
-![history of unix containers](https://gist.githubusercontent.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1/raw/8e71d0e294220df3ec5d72aee859e0753ab3218a/container-techs.png)
+![history of unix containers](https://github.com/mikeraab/docker101/blob/master/images/container-tech.png)
 
 VM vs Container
 
-![image alt text](image_1.png)
+![vm vs container](https://github.com/mikeraab/docker101/blob/master/images/vm-vs-container.png)
 
 While containers may sound like a virtual machine (VM), the two are distinct technologies. With VMs each virtual machine includes the application, the necessary binaries and libraries and the **entire guest operating system**
 
