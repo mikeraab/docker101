@@ -569,28 +569,26 @@ The deployment will automatically run 3 Hello World containers, each running on 
 
 To find the IP of the Host, click on the host under Hostname
 
-<img src=images/021-host-ip.png />
+<img src=images/020a-host-ip.png />
 ***
 
 From this screen, copy the Public IP address shown here
-
-<img src=images/022-dyn-container.png />
+<img src=images/021-host-ip.png />
 ***
 
 Now, click on one of the 3 running Hello World containers running on this host
-
-<img src=images/023-container-port.png />
+<img src=images/022-dyn-container.png />
 ***
 
 Note the Host port, in this case 32771 in the below screenshot
+<img src=images/023-container-port.png />
+***
 
+
+Now, navigate with your browser to that IP and Host Port
 <img src=images/024-dyn-port-hw.png />
 ***
 
-Now, navigate with your browser to that IP and Host Port
-
-<img src=images/025-new-stack.png />
-***
 
 You can then do the same for each of the 3 containers.  This Docker feature provides a valuable advantage of **running multiple copies of the same application on the same host**, increasing efficiency.
 
@@ -606,7 +604,8 @@ So let's explore how you might persist data with a Wordpress stack within Contai
 
 In your OCCS instance, go to the Stacks page.  Here you will see 2 example Wordpress stacks.
 
-![image alt text](image_25.png)
+<img src=images/025-new-stack.png />
+***
 
 But lets create a new Wordpress stack from the below YAML that has some included volume statements.  Click the New Stack Button and then Advanced Editor.
 
