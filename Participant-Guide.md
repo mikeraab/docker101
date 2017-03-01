@@ -70,7 +70,7 @@ History of Linux Containers
 
 ![history of unix containers] 
 
-<img src=“images/001-container-history.jpg” />
+<img src=images/001-container-history.jpg />
 
 VM vs Container
 
