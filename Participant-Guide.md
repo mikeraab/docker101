@@ -570,6 +570,7 @@ The deployment will automatically run 3 Hello World containers, each running on 
 
 To find the IP of the Host, click on the host under Hostname
 
+**GET Image**
 <img src=images/020a-host-ip.png />
 ***
 
@@ -604,65 +605,44 @@ In short, unless a container volume is mounted to a persistent host volume, any 
 So let's explore how you might persist data with a Wordpress stack within Container Cloud Service
 
 In your OCCS instance, go to the Stacks page.  Here you will see 2 example Wordpress stacks.
-
+**get image**
 <img src=images/025-new-stack.png />
 ***
 
 But lets create a new Wordpress stack from the below YAML that has some included volume statements.  Click the New Stack Button and then Advanced Editor.
 
-![image alt text](image_26.png)
+<img src=images/026-advanced-editor.png />
+***
 
 Paste this YAML into the Advanced Editor
 
+```
 version: 2
-
 services:
-
   wordpress:
-
 	image: "wordpress:4.5.2"
-
 	ports:
-
   	- 80:80/tcp
-
 	environment:
-
   	- OCCS_PHASE_ID=1
-
   	- "WORDPRESS_DB_HOST={{ proxy \"db:3306\" }}"
-
   	- WORDPRESS_DB_PASSWORD=example
-
   	- MYSQL_ROOT_PASSWORD=example
-
   	- "OCCS_HEALTHCHECK_WORDPRESS_HTTP=tcp://:80/?timeout=10s&interval=30s"
-
   	- "occs:description=This is a simple wordpress stack that can be deployed to multiple hosts. This example is provided as-is for educational purposes and should not be used in production.  This example also has persistent volumes"
-
 	volumes:
-
   	- "/var/www/html:/var/www/html:rw"
-
   db:
-
 	image: "mariadb:10.1.14"
-
 	ports:
-
   	- 3306/tcp
-
 	environment:
-
   	- OCCS_PHASE_ID=0
-
   	- MYSQL_ROOT_PASSWORD=example
-
   	- "OCCS_HEALTHCHECK_MYSQL=tcp://:3306/?timeout=10s&interval=30s"
-
 	volumes:
-
   	- "/var/lib/mysql:/var/lib/mysql:rw"
+```
 
 The YAML above has the addition of volumes configured for both the Wordpress and the Database highlighted in yellow, that will be mounted to the host volume where these containers are running to persist data from the database, blog images and Wordpress themes.
 
