@@ -144,9 +144,7 @@ $ docker ps -a
 
 Open a browser and go to this URL:
 
-```
 [https://hub.docker.com/r/karthequian/helloworld](https://hub.docker.com/r/karthequian/helloworld)
-```
 
 Pull the image from the Docker Hub Registry - Note how the layers are pulled individually
 
@@ -166,7 +164,7 @@ Explore the Helloworld app in the browser.  Navigate to the IP of the Docker Hos
 ***
 You are now actually using an application that is in the Docker container.  Refresh the browser and observe how the visits counts increments.  This is a live application. A simple example, but an example of the experience of using an application running in a container, which is no different than if it was not running in a container.
 
-> Makes you wonder about how many apps that you are using on a day to day basis, may indeed be running in a Docker container? 
+> *Makes you wonder about how many apps that you are using on a day to day basis, may indeed be running in a Docker container?*
 
 Now, let’s see the same Container in OCCS UI
 
@@ -283,7 +281,7 @@ In Step 1.8, after you are done adding the 3 lines to your Dockerfile with VI, s
 esc : w q 
 ```
 
-> *Note, docs for VI are here: **[https://www.cs.colostate.edu/helpdocs/vi.htm*l](https://www.cs.colostate.edu/helpdocs/vi.html)* *
+> *Note, docs for VI are here: **[https://www.cs.colostate.edu/helpdocs/vi.htm*l](https://www.cs.colostate.edu/helpdocs/vi.html)*
 
 Then per section 2, build your Docker image, be sure to include the period at the end of the command
 
