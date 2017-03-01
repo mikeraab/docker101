@@ -133,7 +133,9 @@ Congratulations, you have just run your first Docker container!
 
 List all containers (- a = running and stopped)
 
+```
 $ docker ps -a
+```
 
 ## Docker Images and the Docker Hub
 
@@ -163,7 +165,7 @@ Explore the Helloworld app in the browser.  Navigate to the IP of the Docker Hos
 
 You are now actually using an application that is in the Docker container.  Refresh the browser and observe how the visits counts increments.  This is a live application. A simple example, but an example of the experience of using an application running in a container, which is no different than if it was not running in a container.
 
-*Makes you wonder about how many apps that you are using on a day to day basis, may indeed be running in a Docker container? 
+> Makes you wonder about how many apps that you are using on a day to day basis, may indeed be running in a Docker container? 
 
 Now, let’s see the same Container in OCCS UI
 
@@ -209,7 +211,7 @@ Check to be sure that the container has been removed
 $ docker ps -a
 ```
 
-*Note, containers can be stopped and removed by using their name **(if there are no dependent image layers)**, their long id or their short id*
+> Note, containers can be stopped and removed by using their name **(if there are no dependent image layers)**, their long id or their short id*
 
 Now run the container with a more descriptive name, such as "helloworld_app":
 
