@@ -141,15 +141,21 @@ $ docker ps -a
 
 Open a browser and go to this URL:
 
+```
 https://hub.docker.com/r/karthequian/helloworld/
+```
 
 Pull the image from the Docker Hub Registry - Note how the layers are pulled individually
 
+```
 $ docker pull karthequian/helloworld:latest
+```
 
 Copy/Paste the Docker Run command from the Docker Hub page and add a -d option so the container runs in "detached" mode (as opposed to the foreground).  This frees up your terminal window.
 
+```
 $ docker run -d -p 80:80/tcp "karthequian/helloworld:latest"
+```
 
 Explore the Helloworld app in the browser.  Navigate to the IP of the Docker Host where it is running and note the number of visits.  (The IP is the same as the Host that you are SSH’d into) 
 
@@ -157,7 +163,7 @@ Explore the Helloworld app in the browser.  Navigate to the IP of the Docker Hos
 
 You are now actually using an application that is in the Docker container.  Refresh the browser and observe how the visits counts increments.  This is a live application. A simple example, but an example of the experience of using an application running in a container, which is no different than if it was not running in a container.
 
-*Makes you wonder about how many apps that you are using on a day to day basis, may indeed be running in a Docker container? *
+*Makes you wonder about how many apps that you are using on a day to day basis, may indeed be running in a Docker container? 
 
 Now, let’s see the same Container in OCCS UI
 
@@ -165,19 +171,17 @@ You will need to log into your instance of Container Cloud Service
 
 Find the login on the Container Cloud Services Console page in your Oracle Public Cloud trial
 
-![image alt text](image_4.png)
+<img src=images/005-occs-access.png />
 
 Log into the OCCS with the credentials used when you created the instance
 
-![image alt text](image_5.png)
+<img src=images/006-occs-login.png />
 
 Navigate via the Left Hand nav to the Containers page and find the container that is running the Helloworld app.
 
 If you have arrived at a page that looks like the below, you will have arrived at the right page.
 
- 
-
-![image alt text](image_6.png)
+<img src=images/007-stoic-wilson.png />
 
 Notice that Docker has assigned a container name "stoic_wilson" in the above?  What name did Docker give your container?  Remember this name, as we will use it in a bit.
 
@@ -189,21 +193,29 @@ Now, let's go back to the terminal window, stop the container and give it a more
 
 Stop the Running Container - Replace your_container below with an actual name that you want to call your running container
 
+```
 $ docker stop your_container
+```
 
 Now, remove the container with the "rm" command
 
+```
 $ docker rm your_container
+```
 
 Check to be sure that the container has been removed
 
+```
 $ docker ps -a
+```
 
 *Note, containers can be stopped and removed by using their name **(if there are no dependent image layers)**, their long id or their short id*
 
 Now run the container with a more descriptive name, such as "helloworld_app":
 
+```
 $ docker run -d --name helloworld_app -p 80:80/tcp "karthequian/helloworld:latest"
+```
 
 Revisit the Container Cloud Service UI.  
 
@@ -213,7 +225,7 @@ Revisit the Container Cloud Service UI.
 
 Feel free to Stop and Remove the container.  We are done with this part of the HOL.
 
-![image alt text](image_7.png)
+<img src=images/008-stop-container.png />
 
 ## Build Your Own Image
 
@@ -235,47 +247,62 @@ Here is a synopsis of the steps in the above URL:
 
 Make a directory to store your Dockerfile
 
+```
 $ mkdir mydockerbuild
+```
 
 Change to the new directory
 
+```
 $ cd mydockerbuild
+```
 
 In Step 1.3, use VI (or editor of your choice) instead of nano
 
+```
 $ vi Dockerfile
+```
 
 Create a text file name Dockerfile with these 3 lines:
 
+```
 FROM docker/whalesay:latest
 
 RUN apt-get -y update && apt-get install -y fortunes
 
 CMD /usr/games/fortune -a | cowsay
+```
 
 In Step 1.8, after you are done adding the 3 lines to your Dockerfile with VI, save the file by typing the Esc key - colon - w (for write) - q (for quit):
 
 	
-
+```
 esc : w q 
+```
 
 *Note, docs for VI are here: **[https://www.cs.colostate.edu/helpdocs/vi.htm*l](https://www.cs.colostate.edu/helpdocs/vi.html)* *
 
 Then per section 2, build your Docker image, be sure to include the period at the end of the command
 
+```
 $ docker build -t docker-whale .
+```
 
 Then per section 4, list the images on your host and run the docker-whale image as a container
 
+```
 $ docker images
+```
 
+```
 $ docker run docker-whale
+```
 
 Notice the output in the terminal.  Re-run the image a couple of times, as the container will run once, then stop.
 
 By contrast, navigate to one of the stopped docker-whale containers in your OCCS instance and select the "View Logs" button to easily view the container logs 
 
-![image alt text](image_8.png)
+<img src=images/009-container-logs.png />
 
 ## Registries
 
