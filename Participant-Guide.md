@@ -26,7 +26,7 @@
 
 12. [CI/CD Integration with GitHub, DockerHub and OCCS](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#cicd-integration-with-github-dockerhub-and-occs)
 
-Appendix. [Summary and More Resources](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#summaryrecap-pointer-to-further-resources)
+13. [Summary and More Resources](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#summaryrecap-pointer-to-further-resources)
 
 ### Summary - This hands-on-lab in targeted at beginners with no prior experience and will cover the basics of using Docker.  Participants will advance concepts and skills from Docker using CLI on a Docker Host/VM to higher level tools, such as Github, Docker Hub and Oracle Container Cloud Service (OCCS).
 
@@ -220,9 +220,9 @@ $ docker run -d --name helloworld_app -p 80:80/tcp "karthequian/helloworld:lates
 
 Revisit the Container Cloud Service UI.  
 
-* Is the container easier to find now, especially that there is context to the name of the container?
+> *Is the container easier to find now, especially that there is context to the name of the container?*
 
-* Notice how you can Stop and Remove the container, directly from the UI
+> *Notice how you can Stop and Remove the container, directly from the UI*
 
 Feel free to Stop and Remove the container.  We are done with this part of the HOL.
 ***
@@ -281,7 +281,7 @@ In Step 1.8, after you are done adding the 3 lines to your Dockerfile with VI, s
 esc : w q 
 ```
 
-> *Note, docs for VI are here: **[https://www.cs.colostate.edu/helpdocs/vi.htm*l](https://www.cs.colostate.edu/helpdocs/vi.html)*
+> *Note, docs for VI are here: [https://www.cs.colostate.edu/helpdocs/vi.html](https://www.cs.colostate.edu/helpdocs/vi.html)*
 
 Then per section 2, build your Docker image, be sure to include the period at the end of the command
 
@@ -305,17 +305,20 @@ By contrast, navigate to one of the stopped docker-whale containers in your OCCS
 ***
 <img src=images/009-container-logs.png />
 ***
+
 ## Registries
 
 Registries store Docker images.  Using a registry is the first step towards moving Docker off the laptop.  The most widely used registry is the Docker Hub.  [https://hub.docker.com](https://hub.docker.com) 
 
-*Note, in this exercise you will need a Docker Hub account.  If you do not have one already, you can signup for free, navigate to **[https://hub.docker.com*/](https://hub.docker.com/)* *
+> *Note, in this exercise you will need a Docker Hub account.  If you do not have one already, you can signup for free, navigate to: [https://hub.docker.com*/](https://hub.docker.com/)*
 
 **Tag and Push your new image to the Docker Hub registry.  In this exercise username will be your Docker Hub account name.**
 
 First, log into your Docker Hub account from the terminal:
 
+```
 $ docker login
+```
 
 When prompted, enter your Docker account username (lowercase), password and email.
 
@@ -323,55 +326,71 @@ Now, tag and push your new docker-whale image to your account on Docker Hub
 
 Substitute your Docker username below:
 
+```
 $ docker tag docker-whale:latest username/docker-whale:latest
+```
 
 Push the Docker image to your account.  This will create a new repository called "docker-whale" for this image.
 
+```
 $ docker push username/docker-whale:latest
+```
 
 Navigate to your account page in Docker Hub via this URL, substituting your username:
 
-https://hub.docker.com/r/username
+[https://hub/docker.com/r/username](https://hub.docker.com/r/username)
 
 Do you see the image that you pushed?
-
-![image alt text](image_9.png)
-
+***
+<img src=images/010-docker-hub.png />
+***
 Now, remove the local image and run the image from the registry
 
 To do this, you must first remove the stopped container by using its short id, not its name.  Find the short id.
 
+'''
 $ docker ps -a 
+'''
 
 Copy the short id for the appropriate container, it will be similar to this format: ee31fe1dd8f8 and use the "rm" command to remove the container 
 
+```
 $ docker rm short_id
+```
 
 Now that the container is removed, you can remove the image and force the container to be run from the image on the Docker Hub with the "rmi" command
 
 Remove the image that you pushed to the Docker Hub
 
+```
 $ Docker rmi username/docker-whale
+```
 
 Verify the images are removed.  View all Docker images with this command:
 
+```
 $ docker images
+```
 
 Now, run the image directly from your repository on Dockerhub, and force a new pull of the image (because the image does not exist locally)
 
+```
 $ docker run username/docker-whale
+```
 
-*Note, if no tag is used, the default tag is "latest"*
+> *Note, if no tag is used, the default tag is "latest"*
 
 **Add the registry to OCCS and run your image there**
 
 On the OCCS Registries Page, create and save a new Registry definition using your Docker hub account, email, username and password.  You can also add a description.
 
-*Note that the URL for your Docker Hub repo/account should be in this format: *index.docker.io/username
+> *Note that the URL for your Docker Hub repo/account should be in this format: index.docker.io/username*
 
-*Clicking the Validate button will show a green banner, indicating a successful Docker Login to the account*
+> *Clicking the Validate button will show a green banner, indicating a successful Docker Login to the account*
 
-![image alt text](image_10.png)
+***
+<img src=images/011-add-registry.png />
+***
 
 Create a new Service with your Docker Run command
 
@@ -379,31 +398,36 @@ Left nav - Services > New Service Button
 
 Copy and Paste this docker run command into the Docker Run tab in the new Service.  Be sure to substitute your Docker username to pull from your repo on Docker Hub.
 
+```
 docker run \
 
   -e="OCCS_REMOVE_ON_DIE=0" \
 
   "username/docker-whale"
-
-![image alt text](image_11.png)
-
+  ```
+***
+<img src=images/012-new-service.png />
+***
 Enter a name for the new Service, such as "whale" and Save the new Service
 
 To run the Whale service, just click the Deploy Button next to Whale service, in the list of available Services, then click Deploy again and accept the default orchestration options.
-
-![image alt text](image_12.png)
+***
+<img src=images/013-deploy-service.png />
+***
 
 The Service will be deployed, run and stop, just like when we ran in the terminal.
 
-*Tip, normally, Deployments would be self-healing and restart a stopped container.  In this case, we choose not to automatically restart the container with the addition of a one- time run environment variable: -e="OCCS_REMOVE_ON_DIE=0" \*
+> *Tip, normally, Deployments would be self-healing and restart a stopped container.  In this case, we choose not to automatically restart the container with the addition of a one- time run environment variable: -e="OCCS_REMOVE_ON_DIE=0" \*
 
 Click on the container name
-
-![image alt text](image_13.png)
+***
+<img src=images/014-select-container.png />
+***
 
 Then click the "View Logs" button to see the whale’s comments
-
-![image alt text](image_14.png)
+***
+<img src=images/015-view-whale-comments.png />
+***
 
 ## Introduction to Docker Compose
 
