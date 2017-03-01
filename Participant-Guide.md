@@ -90,7 +90,7 @@ The first step will be to log in to one of the OCCS "worker nodes", or Docker ho
 First SSH into a Worker Node in your Pre-built ContainerCS instance using the SSH key that you used when you provisioned the OCCS instance. 
 
 To find a Worker Node IP address, log into your Oracle Cloud My Services Portal and use one of the Public IPs from a Worker Note in the Container Cloud Service Console:
-***
+
 <img src=images/003-worker-ip.png />
 ***
 Modify the below command with your Worker node IP and the path for your private key.
@@ -159,7 +159,7 @@ $ docker run -d -p 80:80/tcp "karthequian/helloworld:latest"
 ```
 
 Explore the Helloworld app in the browser.  Navigate to the IP of the Docker Host where it is running and note the number of visits.  (The IP is the same as the Host that you are SSH’d into) 
-***
+
 <img src=images/004-hello-world.png />
 ***
 You are now actually using an application that is in the Docker container.  Refresh the browser and observe how the visits counts increments.  This is a live application. A simple example, but an example of the experience of using an application running in a container, which is no different than if it was not running in a container.
@@ -171,17 +171,17 @@ Now, let’s see the same Container in OCCS UI
 You will need to log into your instance of Container Cloud Service
 
 Find the login on the Container Cloud Services Console page in your Oracle Public Cloud trial
-***
+
 <img src=images/005-occs-access.png />
 ***
 Log into the OCCS with the credentials used when you created the instance
-***
+
 <img src=images/006-occs-login.png />
 ***
 Navigate via the Left Hand nav to the Containers page and find the container that is running the Helloworld app.
 
 If you have arrived at a page that looks like the below, you will have arrived at the right page.
-***
+
 <img src=images/007-stoic-wilson.png />
 ***
 Notice that Docker has assigned a container name "stoic_wilson" in the above?  What name did Docker give your container?  Remember this name, as we will use it in a bit.
@@ -302,7 +302,7 @@ $ docker run docker-whale
 Notice the output in the terminal.  Re-run the image a couple of times, as the container will run once, then stop.
 
 By contrast, navigate to one of the stopped docker-whale containers in your OCCS instance and select the "View Logs" button to easily view the container logs 
-***
+
 <img src=images/009-container-logs.png />
 ***
 
@@ -348,9 +348,9 @@ Now, remove the local image and run the image from the registry
 
 To do this, you must first remove the stopped container by using its short id, not its name.  Find the short id.
 
-'''
+```
 $ docker ps -a 
-'''
+```
 
 Copy the short id for the appropriate container, it will be similar to this format: ee31fe1dd8f8 and use the "rm" command to remove the container 
 
@@ -388,13 +388,15 @@ On the OCCS Registries Page, create and save a new Registry definition using you
 
 > *Clicking the Validate button will show a green banner, indicating a successful Docker Login to the account*
 
-***
+
 <img src=images/011-add-registry.png />
 ***
 
 Create a new Service with your Docker Run command
 
+```
 Left nav - Services > New Service Button
+```
 
 Copy and Paste this docker run command into the Docker Run tab in the new Service.  Be sure to substitute your Docker username to pull from your repo on Docker Hub.
 
@@ -411,7 +413,7 @@ docker run \
 Enter a name for the new Service, such as "whale" and Save the new Service
 
 To run the Whale service, just click the Deploy Button next to Whale service, in the list of available Services, then click Deploy again and accept the default orchestration options.
-***
+
 <img src=images/013-deploy-service.png />
 ***
 
@@ -420,12 +422,12 @@ The Service will be deployed, run and stop, just like when we ran in the termina
 > *Tip, normally, Deployments would be self-healing and restart a stopped container.  In this case, we choose not to automatically restart the container with the addition of a one- time run environment variable: -e="OCCS_REMOVE_ON_DIE=0" \*
 
 Click on the container name
-***
+
 <img src=images/014-select-container.png />
 ***
 
 Then click the "View Logs" button to see the whale’s comments
-***
+
 <img src=images/015-view-whale-comments.png />
 ***
 
@@ -439,19 +441,25 @@ Let's explore this further
 
 Install Docker compose
 
-*Note, docs are here: **[https://docs.docker.com/compose/install*/](https://docs.docker.com/compose/install/)
+> *Note, docs are here: [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)*
 
 Use these specific below commands in your terminal for this exercise to install in your home directory.
 
+```
 $ curl -L "https://github.com/docker/compose/releases/download/1.10.0/docker-compose-$(uname -s)-$(uname -m)" -o /home/opc/docker-compose
+```
 
 Change the executable permissions
 
+```
 $ chmod +x /home/opc/docker-compose
+```
 
 Verify and check which version of Docker Compose was installed
 
+```
 $ ./docker-compose --version
+```
 
 Follow these steps to create a simple Wordpress stack referenced here:
 
@@ -461,6 +469,7 @@ Here is a synopsis of the steps in the above URL:
 
 Use VI to create a file named docker-compose.yml that contains the following text:
 
+```
 version: '2'
 
 services:
@@ -508,16 +517,21 @@ services:
 volumes:
 
 	Db_data:
+```
 
 Run the Wordpress stack by this command
 
+```
 $ ./docker-compose up -d
+```
 
 Verify the running stack, by visiting the Wordpress setup page
 
 In your browser, navigate to the IP of the Docker host, port 8000
 
+```
 http://docker_host_ip:8000/wp-admin/install.php
+```
 
 Congratulations, you have successfully launched your first Wordpress app in Docker!
 
@@ -525,11 +539,13 @@ Stop and Remove the running Wordpress and Database containers by using their sho
 
 Remember this from a previous exercise:
 
+```
 docker ps -a
 
 docker stop short_id
 
 docker rm short_id
+```
 
 Repeat for next container
 
