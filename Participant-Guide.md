@@ -1,6 +1,6 @@
 # Docker Containers 101 - Hands-On-Lab for Beginners - Participant Guide
 
-[[TOC]]
+### Table of Contents:
 
 1. [What is a Container?  What is Docker?](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#what-is-a-container-what-is-docker)
 
@@ -68,13 +68,11 @@ Containers have been around for many years.  Docker created a technology that wa
 
 History of Linux Containers
 
-![history of unix containers] 
-
 <img src=images/001-container-history.jpg />
 
 VM vs Container
 
-![vm vs container](https://github.com/mikeraab/docker101/blob/master/images/vm-vs-container.png)
+<img src=images/002-vm-vs-container.png />
 
 While containers may sound like a virtual machine (VM), the two are distinct technologies. With VMs each virtual machine includes the application, the necessary binaries and libraries and the **entire guest operating system**
 
@@ -92,7 +90,7 @@ First SSH into a Worker Node in your Pre-built ContainerCS instance using the SS
 
 To find a Worker Node IP address, log into your Oracle Cloud My Services Portal and use one of the Public IPs from a Worker Note in the Container Cloud Service Console:
 
-![image alt text](image_2.png)
+<img src=images/003-worker-ip.png />
 
 Modify the below command with your Worker node IP and the path for your private key.
 
@@ -104,23 +102,30 @@ $ ssh opc@ip_address -i /users/yourName/folder/sshkey/privateKey
 
 For convenience, run all commands as root
 
+```
 $ sudo -s
+```
 
 Ensure that the Docker engine is running
 
+```
 $ service docker status
+```
 
 Check the version of Docker engine
 
+```
 $ docker version
+```
 
 ## Run Your First Container
 
 Run Docker’s Helloworld example
 
 	
-
+```
 $ docker run hello-world
+```
 
 Since the "hello-world" image is not available locally on the host, the command automatically pulls the hello-world image from the public Docker Hub and runs the container in the foreground.
 
@@ -148,7 +153,7 @@ $ docker run -d -p 80:80/tcp "karthequian/helloworld:latest"
 
 Explore the Helloworld app in the browser.  Navigate to the IP of the Docker Host where it is running and note the number of visits.  (The IP is the same as the Host that you are SSH’d into) 
 
-![image alt text](image_3.png)
+<img src=images/004-hello-world.png />
 
 You are now actually using an application that is in the Docker container.  Refresh the browser and observe how the visits counts increments.  This is a live application. A simple example, but an example of the experience of using an application running in a container, which is no different than if it was not running in a container.
 
