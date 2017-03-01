@@ -69,9 +69,9 @@ Containers have been around for many years.  Docker created a technology that wa
 History of Linux Containers
 
 <img src=images/001-container-history.jpg />
-
+***
 VM vs Container
-
+***
 <img src=images/002-vm-vs-container.png />
 
 While containers may sound like a virtual machine (VM), the two are distinct technologies. With VMs each virtual machine includes the application, the necessary binaries and libraries and the **entire guest operating system**
@@ -172,9 +172,9 @@ Now, let’s see the same Container in OCCS UI
 You will need to log into your instance of Container Cloud Service
 
 Find the login on the Container Cloud Services Console page in your Oracle Public Cloud trial
-
+***
 <img src=images/005-occs-access.png />
-
+***
 Log into the OCCS with the credentials used when you created the instance
 
 <img src=images/006-occs-login.png />
