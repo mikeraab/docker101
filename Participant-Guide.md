@@ -67,12 +67,12 @@ Docker is the company and containerization technology.
 Containers have been around for many years.  Docker created a technology that was usable by mere humans, and was much easier to understand than before.  Thus, has enjoyed a tremendous amount of support for creating a technology for packaging applications to be **portable and lightweight.**
 
 History of Linux Containers
-***
+
 <img src=images/001-container-history.jpg />
 ***
 
 VM vs Container
-***
+
 <img src=images/002-vm-vs-container.png />
 ***
 While containers may sound like a virtual machine (VM), the two are distinct technologies. With VMs each virtual machine includes the application, the necessary binaries and libraries and the **entire guest operating system**
