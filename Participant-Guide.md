@@ -58,11 +58,11 @@ Basic intro to containers and Docker.  Brief history of Linux Containers.  Basic
 
 A container is a runtime instance of a docker image.
 
-	* [https://docs.docker.com/engine/reference/glossary/#/container](https://docs.docker.com/engine/reference/glossary/#/container)
+[https://docs.docker.com/engine/reference/glossary/#/container](https://docs.docker.com/engine/reference/glossary/#/container)
 
 Docker is the company and containerization technology.
 
-	* [https://docs.docker.com/engine/reference/glossary/#/docker](https://docs.docker.com/engine/reference/glossary/#/docker)  
+[https://docs.docker.com/engine/reference/glossary/#/docker](https://docs.docker.com/engine/reference/glossary/#/docker)  
 
 Containers have been around for many years.  Docker created a technology that was usable by mere humans, and was much easier to understand than before.  Thus, has enjoyed a tremendous amount of support for creating a technology for packaging applications to be **portable and lightweight.**
 
@@ -78,7 +78,7 @@ While containers may sound like a virtual machine (VM), the two are distinct tec
 
 Whereas, Containers include the application, all of its dependencies, but share the kernel with other containers and are not tied to any specific infrastructure, other than having the Docker engine installed on it’s host – containers run on any computer, infrastructure* and cloud.  
 
-> **Please note that at this time, Windows and Linux containers require that they run on their respective kernel base, therefore, Windows containers cannot run on Linux hosts and vice versa.*
+> *Please note that at this time, Windows and Linux containers require that they run on their respective kernel base, therefore, Windows containers cannot run on Linux hosts and vice versa*
 
 ## Verify Docker Engine Install
 
