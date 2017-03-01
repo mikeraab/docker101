@@ -67,13 +67,14 @@ Docker is the company and containerization technology.
 Containers have been around for many years.  Docker created a technology that was usable by mere humans, and was much easier to understand than before.  Thus, has enjoyed a tremendous amount of support for creating a technology for packaging applications to be **portable and lightweight.**
 
 History of Linux Containers
-
+***
 <img src=images/001-container-history.jpg />
 ***
+
 VM vs Container
 ***
 <img src=images/002-vm-vs-container.png />
-
+***
 While containers may sound like a virtual machine (VM), the two are distinct technologies. With VMs each virtual machine includes the application, the necessary binaries and libraries and the **entire guest operating system**
 
 Whereas, Containers include the application, all of its dependencies, but share the kernel with other containers and are not tied to any specific infrastructure, other than having the Docker engine installed on it’s host – containers run on any computer, infrastructure* and cloud.  
@@ -89,9 +90,9 @@ The first step will be to log in to one of the OCCS "worker nodes", or Docker ho
 First SSH into a Worker Node in your Pre-built ContainerCS instance using the SSH key that you used when you provisioned the OCCS instance. 
 
 To find a Worker Node IP address, log into your Oracle Cloud My Services Portal and use one of the Public IPs from a Worker Note in the Container Cloud Service Console:
-
+***
 <img src=images/003-worker-ip.png />
-
+***
 Modify the below command with your Worker node IP and the path for your private key.
 
 ```
@@ -160,9 +161,9 @@ $ docker run -d -p 80:80/tcp "karthequian/helloworld:latest"
 ```
 
 Explore the Helloworld app in the browser.  Navigate to the IP of the Docker Host where it is running and note the number of visits.  (The IP is the same as the Host that you are SSH’d into) 
-
+***
 <img src=images/004-hello-world.png />
-
+***
 You are now actually using an application that is in the Docker container.  Refresh the browser and observe how the visits counts increments.  This is a live application. A simple example, but an example of the experience of using an application running in a container, which is no different than if it was not running in a container.
 
 > Makes you wonder about how many apps that you are using on a day to day basis, may indeed be running in a Docker container? 
@@ -176,18 +177,18 @@ Find the login on the Container Cloud Services Console page in your Oracle Publi
 <img src=images/005-occs-access.png />
 ***
 Log into the OCCS with the credentials used when you created the instance
-
+***
 <img src=images/006-occs-login.png />
-
+***
 Navigate via the Left Hand nav to the Containers page and find the container that is running the Helloworld app.
 
 If you have arrived at a page that looks like the below, you will have arrived at the right page.
-
+***
 <img src=images/007-stoic-wilson.png />
-
+***
 Notice that Docker has assigned a container name "stoic_wilson" in the above?  What name did Docker give your container?  Remember this name, as we will use it in a bit.
 
-*Note, unless you specify a container name, Docker will assign a similar 2 part name automatically.  *
+> *Note, unless you specify a container name, Docker will assign a similar 2 part name automatically.  *
 
 ## Stop and Re-run Your Container with a More Descriptive Name
 
@@ -211,7 +212,7 @@ Check to be sure that the container has been removed
 $ docker ps -a
 ```
 
-> Note, containers can be stopped and removed by using their name **(if there are no dependent image layers)**, their long id or their short id*
+> *Note, containers can be stopped and removed by using their name **(if there are no dependent image layers)**, their long id or their short id*
 
 Now run the container with a more descriptive name, such as "helloworld_app":
 
@@ -226,9 +227,9 @@ Revisit the Container Cloud Service UI.
 * Notice how you can Stop and Remove the container, directly from the UI
 
 Feel free to Stop and Remove the container.  We are done with this part of the HOL.
-
+***
 <img src=images/008-stop-container.png />
-
+***
 ## Build Your Own Image
 
 About DockerFiles
@@ -282,7 +283,7 @@ In Step 1.8, after you are done adding the 3 lines to your Dockerfile with VI, s
 esc : w q 
 ```
 
-*Note, docs for VI are here: **[https://www.cs.colostate.edu/helpdocs/vi.htm*l](https://www.cs.colostate.edu/helpdocs/vi.html)* *
+> *Note, docs for VI are here: **[https://www.cs.colostate.edu/helpdocs/vi.htm*l](https://www.cs.colostate.edu/helpdocs/vi.html)* *
 
 Then per section 2, build your Docker image, be sure to include the period at the end of the command
 
@@ -303,9 +304,9 @@ $ docker run docker-whale
 Notice the output in the terminal.  Re-run the image a couple of times, as the container will run once, then stop.
 
 By contrast, navigate to one of the stopped docker-whale containers in your OCCS instance and select the "View Logs" button to easily view the container logs 
-
+***
 <img src=images/009-container-logs.png />
-
+***
 ## Registries
 
 Registries store Docker images.  Using a registry is the first step towards moving Docker off the laptop.  The most widely used registry is the Docker Hub.  [https://hub.docker.com](https://hub.docker.com) 
