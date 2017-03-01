@@ -99,7 +99,7 @@ Modify the below command with your Worker node IP and the path for your private 
 $ ssh opc@ip_address -i /users/yourName/folder/sshkey/privateKey
 ```
 
-*Note, the above format is usable directly in a Mac terminal. If you are using a Windows computer, use an appropriate Windows SSH client, like Putty or another SSH client*
+> *Note, the above format is usable directly in a Mac terminal. If you are using a Windows computer, use an appropriate Windows SSH client, like Putty or another SSH client*
 
 For convenience, run all commands as root
 
@@ -145,7 +145,7 @@ $ docker ps -a
 Open a browser and go to this URL:
 
 ```
-https://hub.docker.com/r/karthequian/helloworld/
+[https://hub.docker.com/r/karthequian/helloworld](https://hub.docker.com/r/karthequian/helloworld)
 ```
 
 Pull the image from the Docker Hub Registry - Note how the layers are pulled individually
@@ -188,7 +188,7 @@ If you have arrived at a page that looks like the below, you will have arrived a
 ***
 Notice that Docker has assigned a container name "stoic_wilson" in the above?  What name did Docker give your container?  Remember this name, as we will use it in a bit.
 
-> *Note, unless you specify a container name, Docker will assign a similar 2 part name automatically.  *
+> *Note, unless you specify a container name, Docker will assign a similar 2 part name automatically*
 
 ## Stop and Re-run Your Container with a More Descriptive Name
 
