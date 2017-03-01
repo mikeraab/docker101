@@ -471,51 +471,28 @@ Use VI to create a file named docker-compose.yml that contains the following tex
 
 ```
 version: '2'
-
 services:
-
    db:
-
  	image: mysql:5.7
-
  	volumes:
-
    	- db_data:/var/lib/mysql
-
  	restart: always
-
  	environment:
-
    	MYSQL_ROOT_PASSWORD: wordpress
-
    	MYSQL_DATABASE: wordpress
-
    	MYSQL_USER: wordpress
-
    	MYSQL_PASSWORD: wordpress
-
    wordpress:
-
  	depends_on:
-
    	- db
-
  	image: wordpress:latest
-
  	ports:
-
    	- "8000:80"
-
  	restart: always
-
  	environment:
-
    	WORDPRESS_DB_HOST: db:3306
-
    	WORDPRESS_DB_PASSWORD: wordpress
-
 volumes:
-
 	Db_data:
 ```
 
@@ -561,7 +538,8 @@ Navigate to the Hello World Application example service on the Services page
 
 Click the edit button next to the Hello World service and scroll down to the port settings
 
-![image alt text](image_15.png)
+<img src=images/016-edit-helloworld.png />
+***
 
 Notice that the default host port setting is 9000, which means that the container port 80 is mapped to the host port 9000.  If this service is deployed (docker run), host port 9000 on the particular Worker node would be consumed, and no more of this same container could run on that host as it is currently configured.
 
@@ -569,43 +547,50 @@ To get past this limitation, Docker has a feature that allows for containers to 
 
 To modify the service to use dynamic ports, edit the port and remove port 9000 from the host and leave it blank.
 
-![image alt text](image_16.png)
+<img src=images/017-remove-port.png />
+***
 
 Save the port edit and use "Save As" to create a new Service called Hello World Dynamic.  Save the new service.
 
-![image alt text](image_17.png)
+<img src=images/018-save-as-dyn.png />
+***
 
 Now deploy the new Hello World Dynamic service and add 3 for the Quantity of containers and set a "Constraint" to deploy this on only one of your hosts, as per the below screenshot.  Once the options are set, click deploy.
 
-![image alt text](image_18.png)
+<img src=images/019-deploy-hw-dyn.png />
+***
 
 The deployment will automatically run 3 Hello World containers, each running on different dynamic ports on the same Docker Host.
 
-![image alt text](image_19.png)
+<img src=images/020-hw-hosts.png />
+***
 
 **Now, use your browser to navigate to the IP and Port of one of the containers.**
 
 To find the IP of the Host, click on the host under Hostname
 
-![image alt text](image_20.png)
-
- 
+<img src=images/021-host-ip.png />
+***
 
 From this screen, copy the Public IP address shown here
 
-## ![image alt text](image_21.png)
+<img src=images/022-dyn-container.png />
+***
 
 Now, click on one of the 3 running Hello World containers running on this host
 
-![image alt text](image_22.png)
+<img src=images/023-container-port.png />
+***
 
 Note the Host port, in this case 32771 in the below screenshot
 
-![image alt text](image_23.png)
+<img src=images/024-dyn-port-hw.png />
+***
 
 Now, navigate with your browser to that IP and Host Port
 
-![image alt text](image_24.png)
+<img src=images/025-new-stack.png />
+***
 
 You can then do the same for each of the 3 containers.  This Docker feature provides a valuable advantage of **running multiple copies of the same application on the same host**, increasing efficiency.
 
