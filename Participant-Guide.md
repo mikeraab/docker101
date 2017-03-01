@@ -68,7 +68,7 @@ Containers have been around for many years.  Docker created a technology that wa
 
 History of Linux Containers
 
-![history of unix containers](https://github.com/mikeraab/docker101/blob/master/images/container-tech.png)
+![history of unix containers](docker101/images/2017-02-13_14-54-26.png)
 
 VM vs Container
 
