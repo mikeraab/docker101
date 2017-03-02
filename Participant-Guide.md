@@ -2,11 +2,11 @@
 
 ### Table of Contents:
 
-1. [What is a Container?  What is Docker?](https://github.com/mikeraab/docker101/blob/master/Participant-Guide.md#what-is-a-container-what-is-docker)
+1. [What is a Container?  What is Docker?](../docker101/blob/master/Participant-Guide.md#what-is-a-container-what-is-docker)
 
-2. [Verify Docker Engine Install](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#verify-docker-engine-install)
+2. [Verify Docker Engine Install](../docker101/blob/master/Participant-Guide.md#verify-docker-engine-install)
 
-3. [Run Your First Container](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#run-your-first-container)
+3. [Run Your First Container](../docker101/blob/master/Participant-Guide.md#run-your-first-container)
 
 4. [Docker Images and Docker Hub](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#docker-images-and-the-docker-hub)
 
