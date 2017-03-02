@@ -12,21 +12,21 @@
 
 5. [Stop and Re-run Your Container with a More Descriptive Name](../master/Participant-Guide.md#stop-and-re-run-your-container-with-a-more-descriptive-name)
 
-6. [Build Your Own Image](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#build-your-own-image)
+6. [Build Your Own Image](../master/Participant-Guide.md#build-your-own-image)
 
-7. [Registries](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#registries)
+7. [Registries](../master/Participant-Guide.md#registries)
 
-8. [Introduction to Docker Compose](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#introduction-to-docker-compose)
+8. [Introduction to Docker Compose](../master/Participant-Guide.md#introduction-to-docker-compose)
 
-9. [Understanding Basic Docker Networking](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#understanding-basic-docker-networking)
+9. [Understanding Basic Docker Networking](../master/Participant-Guide.md#understanding-basic-docker-networking)
 
-10. [Understand Docker Volumes](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#understand-docker-volumes)
+10. [Understand Docker Volumes](../master/Participant-Guide.md#understand-docker-volumes)
 
-11. [Running Applications Across Multiple Docker Hosts](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#running-applications-across-multiple-docker-hosts)
+11. [Running Applications Across Multiple Docker Hosts](../master/Participant-Guide.md#running-applications-across-multiple-docker-hosts)
 
-12. [CI/CD Integration with GitHub, DockerHub and OCCS](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#cicd-integration-with-github-dockerhub-and-occs)
+12. [CI/CD Integration with GitHub, DockerHub and OCCS](../master/Participant-Guide.md#cicd-integration-with-github-dockerhub-and-occs)
 
-13. [Summary and More Resources](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#summaryrecap-pointer-to-further-resources)
+13. [Summary and More Resources](../master/Participant-Guide.md#summaryrecap-pointer-to-further-resources)
 
 ### Summary - This hands-on-lab is targeted at beginners with no prior experience and will cover the basics of using Docker.  Participants will advance concepts and skills from Docker using CLI on a Docker Host/VM to higher level tools, such as Github, Docker Hub and Oracle Container Cloud Service (OCCS).
 
