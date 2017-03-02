@@ -342,7 +342,7 @@ Navigate to your account page in Docker Hub via this URL, substituting your user
 [https://hub/docker.com/r/username](https://hub.docker.com/r/username)
 
 Do you see the image that you pushed?
-***
+
 <img src=images/010-docker-hub.png />
 ***
 Now, remove the local image and run the image from the registry
@@ -403,9 +403,7 @@ Copy and Paste this docker run command into the Docker Run tab in the new Servic
 
 ```
 docker run \
-
   -e="OCCS_REMOVE_ON_DIE=0" \
-
   "username/docker-whale"
   ```
 ***
@@ -605,6 +603,7 @@ In short, unless a container volume is mounted to a persistent host volume, any 
 So let's explore how you might persist data with a Wordpress stack within Container Cloud Service
 
 In your OCCS instance, go to the Stacks page.  Here you will see 2 example Wordpress stacks.
+
 **get image**
 <img src=images/025-new-stack.png />
 ***
@@ -648,79 +647,100 @@ The YAML above has the addition of volumes configured for both the Wordpress and
 
 Notice that the volume in the container is listed first. Then the host volume, with the option rw for read and write. (as opposed to ro, for read only).
 
-![image alt text](image_27.png)
+<img src=images/027-paste-yaml.png />
+***
 
 Save the Advanced Editor and then give the stack a name, Wordpress persistent.  Then save the new stack.
 
-![image alt text](image_28.png)
+<img src=images/028-save-wp-stack.png />
+***
 
 Once saved, you will see it listed and you can deploy this new Stack
 
-![image alt text](image_29.png)
+**CHECK IMAGE**
+<img src=images/029-deploy-wp.png />
+***
 
 Now Deploy the Wordpress persistent stack
 
-![image alt text](image_30.png)
+<img src=images/029-deploy-wp.png />
+***
 
 When the Wordpress stack is deployed and running.  Make a note of the host locations for both the Wordpress and Database containers.  You will need these later when we re-deploy the stack so the containers can persist their data on the same host for each container.
 
-![image alt text](image_31.png)
+<img src=images/030-wp-hosts.png />
+***
 
 Find the IP of the Wordpress container.  Click the Hostname for the Wordpress container.
 
-![image alt text](image_32.png)
+<img src=images/031-wp-host-ip.png />
+***
 
 Copy the IP address
 
-![image alt text](image_33.png)
+<img src=images/032-wp-host-ip.png />
+***
 
-In your browser navigate the the IP address/wp-admin/install.php.  This is the same setup URL you saw when we deployed with Docker Compose, however this time, we are going to setup Wordpress and create blog post.
+In your browser navigate to Host_IP and append it with the Wordpress initialization URL: /wp-admin/install.php.  
+
+> *Note, this is the same setup URL you saw when we deployed with Docker Compose, however this time, we are going to setup Wordpress and create blog post.
 
 [http://ip_address/wp-admin/install.php](http://ip_address/wp-admin/install.php)
 
-Select your language
+First, select your language
 
-![image alt text](image_34.png)
+<img src=images/033-wp-setup1.png />
+***
 
-Setup the Wordpress login
+Setup the Wordpress login details.  Be sure to keep the Username and Password in your notes.
 
-![image alt text](image_35.png)
+<img src=images/034-wp-setup2.png />
+***
 
-Click login to login to Wordpress
+Click "login" to log into to Wordpress
 
-![image alt text](image_36.png)
+<img src=images/034-wp-setup2.png />
+***
 
-Login
+Login using the credentials you created earlier
 
-![image alt text](image_37.png)
+<img src=images/036-wp-login2.png />
+***
 
 Select "Write your first blog post" in the Next Steps section
 
-![image alt text](image_38.png)
+<img src=images/037-write-blog.png />
+***
 
 Create a sample blog post.  Include an image of your choosing, if you would like and click Publish.
 
-![image alt text](image_39.png)
+<img src=images/038-publish-blog.png />
+***
 
-Click on the Permalink to navigate to the blog post
+Click on the "Permalink" to navigate to the blog post
 
-![image alt text](image_40.png)
+<img src=images/039-permalink.png />
+***
 
-Copy the URL of the blog post and keep this, as you will need it later
+Copy the URL of the blog post and keep this in your notes, as you will need it later
 
-![image alt text](image_41.png)
+<img src=images/040-view-blog.png />
+***
 
-Back in OCCS, stop the Wordpress deployment, which will stop each container
+Back in OCCS, use the "Stop" button to stope the Wordpress deployment, which will stop each container in an orderly fashion
 
-![image alt text](image_42.png)
+<img src=images/041-stop-wp.png />
+***
 
-Remove the deployment to remove all containers
+Use the "Remove" button to remove the deployment and remove all containers
 
-![image alt text](image_43.png)
+<img src=images/042-remove-wp.png />
+***
 
 Verify in the browser that the wordpress blog post is gone by refreshing the page
 
-![image alt text](image_44.png)
+<img src=images/043-refresh.png />
+***
 
 Redeploy the Wordpress persistent stack.  Note, if you are on a multi-worker node instance, you will need to set the host constraint like this to ensure that the containers run on the same hosts as before, so they can re-join with the existing host volumes that were created on those hosts.
 
