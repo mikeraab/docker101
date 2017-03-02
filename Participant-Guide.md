@@ -171,13 +171,13 @@ You are now actually using an application that is in the Docker container.  Refr
 
 Now, let’s see the same Container in the OCCS UI.
 
-You will need to log into your instance of Container Cloud Service.
+You will need to login to your instance of Container Cloud Service.
 
-Find the login on the Container Cloud Services Console page in your Oracle Public Cloud trial:
+Find the login on the Container Cloud Services Console page in your Oracle Public Cloud trial.  Click on "Container Console":
 
 <img src=images/005-occs-access.png />
 ***
-Log into the OCCS with the credentials used when you created the instance:
+Login to Container Cloud Service with the credentials used when you created the instance:
 
 <img src=images/006-occs-login.png />
 ***
