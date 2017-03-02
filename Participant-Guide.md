@@ -573,9 +573,7 @@ The deployment will automatically run 3 Hello World containers, each running on 
 
 To find the IP of the Host, click on the host link under Hostname:
 
-**GET Image**
-
-<img src=images/020a-host-ip.png />
+<img src=images/021-2-host.png />
 ***
 
 From this screen, copy the Public IP address shown here:
@@ -610,12 +608,14 @@ So let's explore how you might persist data with a Wordpress Stack within Contai
 
 In your OCCS instance, go to the Stacks page.  Here you will see 2 example Wordpress Stacks:
 
-**get image**
-
-<img src=images/025-new-stack.png />
+<img src=images/025-1-stacks.png />
 ***
 
-But lets create a new Wordpress Stack from the below YAML that has some included volume statements.  Click the New Stack Button and then Advanced Editor:
+But lets create a new Wordpress Stack from the below YAML that has some included volume statements. Click the "New Stack" button:
+<img src=images/025-2-newstack.png />
+***
+
+Click the "Advanced Editor" link:
 
 <img src=images/026-advanced-editor.png />
 ***
@@ -879,7 +879,7 @@ Check to see that it looks just like this (edits are highlighted in the red boxe
 
 **REDO THIS IMAGE***
 
-<img src=images/051-index-edits.png />
+<img src=images/051-index-edit.png />
 ***
 
 Scroll Down and Commit your Changes.  Add a description and press the "Commit Changes" button:
