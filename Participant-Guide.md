@@ -146,7 +146,9 @@ Open a browser and go to this URL:
 
 [https://hub.docker.com/r/karthequian/helloworld](https://hub.docker.com/r/karthequian/helloworld)
 
-Pull the image from the Docker Hub Registry - Note how the layers are pulled individually
+Pull the image from the Docker Hub Registry
+
+>  *Note how the layers are pulled individually*
 
 ```
 $ docker pull karthequian/helloworld:latest
