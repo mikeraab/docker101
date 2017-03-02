@@ -2,7 +2,7 @@
 
 ### Table of Contents:
 
-1. [What is a Container?  What is Docker?](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#what-is-a-container-what-is-docker)
+1. [What is a Container?  What is Docker?](https://github.com/mikeraab/docker101/blob/master/Participant-Guide.md#what-is-a-container-what-is-docker)
 
 2. [Verify Docker Engine Install](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#verify-docker-engine-install)
 
