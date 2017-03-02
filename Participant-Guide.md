@@ -221,7 +221,7 @@ Now run the container with a more descriptive name, such as "helloworld_app"
 $ docker run -d --name helloworld_app -p 80:80/tcp "karthequian/helloworld:latest"
 ```
 
-Revisit the Container Cloud Service UI.  
+Revisit the Container Cloud Service UI  
 
 > *Is the container easier to find now, especially that there is context to the name of the container?*
 
@@ -314,7 +314,7 @@ By contrast, navigate to one of the stopped docker-whale containers in your OCCS
 
 Registries store Docker images.  Using a registry is the first step towards moving Docker off the laptop.  The most widely used registry is the Docker Hub: [https://hub.docker.com](https://hub.docker.com) 
 
-> *Note - In this exercise you will need a Docker Hub account.  If you do not have one already, you can signup for free, navigate to: [https://hub.docker.com*/](https://hub.docker.com/)*
+> *Note - in this exercise you will need a Docker Hub account.  If you do not have one already, you can signup for free, navigate to: [https://hub.docker.com*/](https://hub.docker.com/)*
 
 **Tag and Push your new image to the Docker Hub registry.  In this exercise username will be your Docker Hub account name.**
 
@@ -606,16 +606,16 @@ A full introduction to Docker volumes is located here: [https://docs.docker.com/
 
 In short, unless a container volume is mounted to a persistent host volume, any data stored within the container will be lost when the container is removed.
 
-So let's explore how you might persist data with a Wordpress stack within Container Cloud Service.
+So let's explore how you might persist data with a Wordpress Stack within Container Cloud Service.
 
-In your OCCS instance, go to the Stacks page.  Here you will see 2 example Wordpress stacks:
+In your OCCS instance, go to the Stacks page.  Here you will see 2 example Wordpress Stacks:
 
 **get image**
 
 <img src=images/025-new-stack.png />
 ***
 
-But lets create a new Wordpress stack from the below YAML that has some included volume statements.  Click the New Stack Button and then Advanced Editor:
+But lets create a new Wordpress Stack from the below YAML that has some included volume statements.  Click the New Stack Button and then Advanced Editor:
 
 <img src=images/026-advanced-editor.png />
 ***
@@ -659,7 +659,7 @@ Notice that the volume in the container is listed first. Then the host volume, w
 > *Note - if "ro" was use, this would be for read only.*
 
 
-Save the Advanced Editor and then give the stack a name, Wordpress persistent.  Then save the new Stack:
+Save the Advanced Editor and then give the Stack a name, Wordpress persistent.  Then save the new Stack:
 
 <img src=images/028-save-wp-stack.png />
 ***
@@ -778,19 +778,19 @@ Once the Deployment if running, healthy and green, navigate back to the blog pos
 
 The data persisted because it was written to the host volume, and then re-joined to the containers when they were re-deployed on the same hosts.
 
-> *Note - you can specify the exact hosts to run on when the Wordpress stack is deployed by using a host tag.  This will automatically set the host constraint to host tag and no adjustment will be needed at deployment time.* 
+> *Note - you can specify the exact hosts to run on when the Wordpress Stack is deployed by using a host tag.  This will automatically set the host constraint to host tag and no adjustment will be needed at deployment time.* 
 
 **need to find resource for above**
 
 ## Running Applications Across Multiple Docker Hosts
 
-Introduction to OCCS service discovery, running WordPress stack across multiple hosts.
+Introduction to OCCS service discovery, running WordPress Stack across multiple hosts.
 
-In this section we will explore how the Wordpress stack is able to deploy the Wordpress and Database container on different hosts, **and allow communication between the two.**
+In this section we will explore how the Wordpress Stack is able to deploy the Wordpress and Database container on different hosts, **and allow communication between the two.**
 
-If you have a multi-host setup already with your Oracle Container Cloud Service, you may have experienced this already in the last exercise when you deployed the Wordpress persistent stack.  In this section we will explore how this works in more detail.
+If you have a multi-host setup already with your Oracle Container Cloud Service, you may have experienced this already in the last exercise when you deployed the Wordpress persistent Stack.  In this section we will explore how this works in more detail.
 
-If you examine the Wordpress persistent YAML that we used by opening the stack advanced editor: 
+If you examine the Wordpress persistent YAML that we used by opening the Stack Advanced Editor: 
 ```
 Stacks page > Edit (Wordpress persistent) > Advanced Editor
 ```
@@ -817,7 +817,7 @@ More information on the template function can be found in the docs, here:
 
 ## CI/CD Integration with GitHub, DockerHub and OCCS
 
-> *Note - This section is optional, time permitting.  You may complete it after the HOL.*
+> *Note - this section is optional, time permitting.  You may complete it after the HOL.*
 
 Container Cloud Service can be adapted into any Continuous Integration and Continuous Deployment (CI/CD) process, since you can connect multiple registries as needed.  
 
@@ -829,7 +829,7 @@ As you saw in the previous exercise where we created an image (the Docker whale)
 
 Now, let's explore another method using GitHub, Docker Hub and Container Cloud Service.
 
-> *Note - In this exercise you will build a Dockerfile from Github on Docker Hub, deploy the latest version, then modify the Index.html in Github to trigger an automated Docker image build in DockerHub, and then verify the new build and image as a running container.*
+> *Note - in this exercise you will build a Dockerfile from Github on Docker Hub, deploy the latest version, then modify the Index.html in Github to trigger an automated Docker image build in DockerHub, and then verify the new build and image as a running container.*
 
 **To begin, complete steps 1 to 7 in this exercise:**
 
