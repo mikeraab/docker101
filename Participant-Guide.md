@@ -763,12 +763,12 @@ Select the "Deploy" button to deploy the stack
 
 Once the Deployment if running, healthy and green, navigate back to the blog post URL that you noted, in your browser and refresh the page
 
-<img src=images/047-refresh-blog.png/>
+<img src=images/047-refresh-blog.png />
 ***
 
 The data persisted because it was written to the host volume, and then re-joined to the containers when they were re-deployed on the same hosts.
 
-> *Note - you can specify the exact hosts to run on when the Wordpress stack is deployed by using a host tag.  See*
+> *Note - you can specify the exact hosts to run on when the Wordpress stack is deployed by using a host tag.  This will automatically set the host constraint to host tag and no adjustment will be needed at deployment time.  See*
 
 **need to find resource for above**
 
@@ -778,17 +778,20 @@ Introduction to OCCS service discovery, running WordPress stack across multiple 
 
 In this section we will explore how the Wordpress stack is able to deploy the Wordpress and Database container on different hosts, **and allow communication between the two.**
 
-If you have a multi-host setup already with your Oracle Container Cloud Service, you may have experienced this already in the last exercise, with the already deployed Wordpress persistent stack.  In this section we will explore how this works in more detail.
+If you have a multi-host setup already with your Oracle Container Cloud Service, you may have experienced this already in the last exercise when you deployed the Wordpress persistent stack.  In this section we will explore how this works in more detail.
 
 If you examine the Wordpress persistent YAML that we used by opening the stack advanced editor: 
 
 Stacks page > Edit (Wordpress persistent) > Advanced Editor
 
-![image alt text](image_49.png)
+<img src=images/048-wp-proxy.png />
+***
 
-You will notice this template function in the Wordpress service section:
+Notice this template function in the Wordpress service section:
 
+```
   	- "WORDPRESS_DB_HOST={{ proxy \"db:3306\" }}"
+```
 
 This is a  multi-host directive that routes the endpoint of given SERVICE_ID:PORT
 
@@ -800,25 +803,23 @@ The template arguments and service discovery provide a consistent usage paradigm
 
 More information on the template function can be found in the docs, here:
 
-Insert url for docs
+**enter docs URL for templates**
 
 ## CI/CD Integration with GitHub, DockerHub and OCCS
 
-## *Note: This section is optional, time permitting.  You may complete it after the HOL.*
+> *Note: This section is optional, time permitting.  You may complete it after the HOL.*
 
-## Container Cloud Service can be adapted into any Continuous Integration and Continuous Deployment (CI/CD) process, since you can connect multiple registries as needed.  
+Container Cloud Service can be adapted into any Continuous Integration and Continuous Deployment (CI/CD) process, since you can connect multiple registries as needed.  
 
-## As you saw in the previous exercise where we created an image (the Docker whale) and then pushed that image to a Docker image repository, then deployed it within OCCS, we basically ran through a very simple CI/CD example.
+As you saw in the previous exercise where we created an image (the Docker whale) and then pushed that image to a Docker image repository, then deployed it within OCCS, we basically ran through a very simple CI/CD example.
 
-Requirements: user account for Github and DockerHub.
+**Requirements: user account for Github and DockerHub**
 
-If you do not have a Github account, get a free one here:
+> If you do not have a Github account, get a free one here: [https://github.com/join](https://github.com/join) 
 
-[https://github.com/join](https://github.com/join) 
+Now, let's explore another method using GitHub, Docker Hub and Container Cloud Service.
 
-Now, let's explore another method, using GitHub, Docker Hub and Container Cloud Service.
-
-## In this exercise you will build a Dockerfile from Github on Docker Hub, deploy the latest version, then modify the Index.html in Github to trigger an automated Docker image build in DockerHub, and then verify the new build and image as a running container.
+> *Note - In this exercise you will build a Dockerfile from Github on Docker Hub, deploy the latest version, then modify the Index.html in Github to trigger an automated Docker image build in DockerHub, and then verify the new build and image as a running container.*
 
 To begin, complete steps 1 to 7 in this exercise:
 
@@ -828,75 +829,91 @@ Once you have completed step 7 in the above, follow these steps.
 
 In your Github account navigate to the URL where you have forked the above Helloworld.  Replace your Github username in the below URL
 
-https://github.com/username/docker-images/blob/master/ContainerCloud/images/docker-hello-world/
+https://github.com/*username*/docker-images/blob/master/ContainerCloud/images/docker-hello-world/
 
-Click on the link for "Index.html"
+On the Github page, click on the link for "Index.html"
 
-![image alt text](image_50.png)
+<img src=images/049-hw-index.png />
+***
 
 This is the HTML for the home page of the HelloWorld Demo from above.  
 
-Modify Index.html to create a "Hello Earth" page
-
-Lets modify it to trigger a new image build, and then run the resulting container to observe the changes.
+You are going to modify this Index.html to create a new "Hello Earth" page, this will automatically trigger a new image build in Docker hub.  You will then run the resulting container to observe the changes.
 
 Edit the page via the pencil icon and make these changes
 
-![image alt text](image_51.png)
+<img src=images/050-edit-index.png />
+***
 
 On line 8, change the background color to:  
 
+```
 black
+```
 
 Add a new line 9 with the text: 
 
+```
 color: white;
+```
 
 On line 14, edit the H2 header to this, replacing YourCity with the city of your Oracle Code event: 
 
+```
 <h2>Hello Earth from Oracle Code YourCity!</h2>
+```
 
 Create a new line after </body> on line 15, and add this line for an image of the earth: 
 
+```
 <img src="[http://www.freeimageslive.com/galleries/space/earth/pics/a17_h_148_22725.gif](http://www.freeimageslive.com/galleries/space/earth/pics/a17_h_148_22725.gif)"
+```
 
 Check to see that it looks just like this (edits are highlighted in the red boxes):
 
-![image alt text](image_52.png)
+<img src=images/051-index-edits.png />
+***
 
 Scroll Down and Commit your Changes.  Add a description and press the "Commit Changes" button
 
-![image alt text](image_53.png)
+<img src=images/052-commit-index.png />
+***
 
 This will trigger a new automated build in Docker Hub, which will run the Dockerfile, which incorporates the new changes in index.html as part of the build process.  
 
 It will take a few minutes for this to complete in Docker Hub.  When it does, Success will be noted in the Status column.
 
-![image alt text](image_54.png)
+<img src=images/053-docker-build.png />
+***
 
 Back in Container Cloud service, click on the running container for the Hello-World-Demo
 
-## ![image alt text](image_55.png)
+<img src=images/054-docker-hw.png />
+***
 
 Manually stop the container to trigger an automated restart of the Deployment
 
-![image alt text](image_56.png)
+<img src=images/055-stop-hw.png />
+***
 
 Back on the Deployments page, this will cause the deployment to stop and restart.  The restart is automatic, so give it a few seconds to cycle.
 
-![image alt text](image_57.png)
+<img src=images/056-stopping-hw.png />
+***
 
 Once the deployment is restarted, verify the Host that the container is running on. 
 
 *Note: on multi-host OCCS instances, containers can restart anywhere in the resource pool, unless orchestrated to a specific host, by a specific method such as tag.*
 
-![image alt text](image_58.png)
+<img src=images/057-running-hw.png />
+***
 
 Visit the host’s IP on port 8080 and observe your changes and a new Hello Earth!
 
-![image alt text](image_59.png)
+<img src=images058-hello-earth.png />
+***
 
-Congratulations!  You have successfully completed this Hands On Lab.
+**Congratulations!**  You have successfully completed this Hands On Lab.
 
 ## Summary/Recap Pointer to Further Resources
 
@@ -904,7 +921,9 @@ Congratulations!  You have successfully completed this Hands On Lab.
 
 [Oracle Container Registry](https://container-registry.oracle.com)
 
-OCCS Blogs
+[Oracle Container Registry Docs](http://docs.oracle.com/en/cloud/iaas/container-cloud/index.html)
+
+OCCS Blogs:
 
 [https://community.oracle.com/community/cloud_computing/containers-docker-and-microservices](https://community.oracle.com/community/cloud_computing/containers-docker-and-microservices)
 
