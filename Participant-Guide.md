@@ -744,25 +744,33 @@ Verify in the browser that the wordpress blog post is gone by refreshing the pag
 
 Redeploy the Wordpress persistent stack.  Note, if you are on a multi-worker node instance, you will need to set the host constraint like this to ensure that the containers run on the same hosts as before, so they can re-join with the existing host volumes that were created on those hosts.
 
-Set the host constraint for the Wordpress container
+Within the Deploy ootions, set the host constraint for the Wordpress container
 
-![image alt text](image_45.png)
+<img src=images/044-wp-constraint.png />
+***
 
-Set the host constraint for the Database container
+Then using the "+" icon in the UI, expose the database service snd set the host constraint for the Database container
 
-![image alt text](image_46.png)
+<img src=images/045-db-constraint.png />
+***
 
-Deploy the stack
+Select the "Deploy" button to deploy the stack
 
-Verify that the Wordpress and Database containers are running and deployed on the same hosts as before.  This is a very important step.
+> *Important - Verify that the Wordpress and Database containers are running and deployed on the **same hosts as before**.  If this is not the case, Stop and Remove the deployment and set the Host constraints again.  The containers must run on the same hosts to reconnect with the existing host volumes.*
 
-![image alt text](image_47.png)
+<img src=images/046-wp-redeploy.png />
+***
 
-Once the Deployment is healthy and green, navigate back to the blog post URL in your browser and refresh the page
+Once the Deployment if running, healthy and green, navigate back to the blog post URL that you noted, in your browser and refresh the page
 
-![image alt text](image_48.png)
+<img src=images/047-refresh-blog.png/>
+***
 
-The data persisted because it was written to the host volume, and then re-joined to the containers when they were re-deployed.
+The data persisted because it was written to the host volume, and then re-joined to the containers when they were re-deployed on the same hosts.
+
+> *Note - you can specify the exact hosts to run on when the Wordpress stack is deployed by using a host tag.  See*
+
+**need to find resource for above**
 
 ## Running Applications Across Multiple Docker Hosts
 
