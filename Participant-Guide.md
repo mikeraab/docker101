@@ -664,12 +664,7 @@ Save the Advanced Editor and then give the Stack a name, Wordpress persistent.  
 <img src=images/028-save-wp-stack.png />
 ***
 
-Once saved, you will see it listed and you can deploy this new Stack:
-
-**CHECK IMAGE**
-
-<img src=images/029-deploy-wp.png />
-***
+Once saved, you will see it listed and you can deploy this new Stack
 
 Now Deploy the Wordpress persistent Stack:
 
