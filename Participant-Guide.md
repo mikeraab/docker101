@@ -910,7 +910,7 @@ Once the deployment is restarted, verify the Host that the container is running 
 
 Visit the host’s IP on port 8080 and observe your changes and a new Hello Earth!
 
-<img src=images058-hello-earth.png />
+<img src=images/058-hello-earth.png />
 ***
 
 **Congratulations!**  You have successfully completed this Hands On Lab.
