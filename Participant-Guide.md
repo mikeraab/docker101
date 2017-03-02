@@ -38,7 +38,7 @@
 
 * A pre-provisioned instance of Oracle Container Cloud Service
 
-    * [see Youtube to watch a short video for setup and access](https://youtu.be/fusfnOLBjBc) 
+    * [see Youtube to watch a short video for setup and access](https://youtu.be/l3H-oMRcrGo) 
 
 * A laptop
 
