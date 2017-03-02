@@ -79,7 +79,7 @@ While containers may sound like a virtual machine (VM), the two are distinct tec
 
 Whereas, Containers include the application, all of its dependencies, but share the kernel with other containers and are not tied to any specific infrastructure, other than having the Docker engine installed on it’s host – containers run on any computer, infrastructure* and cloud.  
 
-> *Please note - that at this time, Windows and Linux containers require that they run on their respective kernel base, therefore, Windows containers cannot run on Linux hosts and vice versa.*
+> *Note - at this time, Windows and Linux containers require that they run on their respective kernel base, therefore, Windows containers cannot run on Linux hosts and vice versa.*
 
 ## Verify Docker Engine Install
 
