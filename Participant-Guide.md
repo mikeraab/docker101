@@ -28,7 +28,7 @@
 
 13. [Summary and More Resources](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#summaryrecap-pointer-to-further-resources)
 
-### Summary - This hands-on-lab in targeted at beginners with no prior experience and will cover the basics of using Docker.  Participants will advance concepts and skills from Docker using CLI on a Docker Host/VM to higher level tools, such as Github, Docker Hub and Oracle Container Cloud Service (OCCS).
+### Summary - This hands-on-lab is targeted at beginners with no prior experience and will cover the basics of using Docker.  Participants will advance concepts and skills from Docker using CLI on a Docker Host/VM to higher level tools, such as Github, Docker Hub and Oracle Container Cloud Service (OCCS).
 
 ### Pre-requisites:
 
@@ -75,11 +75,11 @@ VM vs Container
 
 <img src=images/002-vm-vs-container.png />
 ***
-While containers may sound like a virtual machine (VM), the two are distinct technologies. With VMs each virtual machine includes the application, the necessary binaries and libraries and the **entire guest operating system**
+While containers may sound like a virtual machine (VM), the two are distinct technologies. With VMs each virtual machine includes the application, the necessary binaries and libraries and the **entire guest operating system.**
 
 Whereas, Containers include the application, all of its dependencies, but share the kernel with other containers and are not tied to any specific infrastructure, other than having the Docker engine installed on it’s host – containers run on any computer, infrastructure* and cloud.  
 
-> *Please note that at this time, Windows and Linux containers require that they run on their respective kernel base, therefore, Windows containers cannot run on Linux hosts and vice versa*
+> *Please note - that at this time, Windows and Linux containers require that they run on their respective kernel base, therefore, Windows containers cannot run on Linux hosts and vice versa.*
 
 ## Verify Docker Engine Install
 
@@ -89,7 +89,7 @@ The first step will be to log in to one of the OCCS "worker nodes", or Docker ho
 
 First SSH into a Worker Node in your Pre-built ContainerCS instance using the SSH key that you used when you provisioned the OCCS instance. 
 
-To find a Worker Node IP address, log into your Oracle Cloud My Services Portal and use one of the Public IPs from a Worker Note in the Container Cloud Service Console:
+To find a Worker Node IP address, log into your Oracle Cloud My Services Portal and use one of the Public IPs from a Worker Node in the Container Cloud Service Console:
 
 <img src=images/003-worker-ip.png />
 ***
@@ -99,7 +99,7 @@ Modify the below command with your Worker node IP and the path for your private 
 $ ssh opc@ip_address -i /users/yourName/folder/sshkey/privateKey
 ```
 
-> *Note, the above format is usable directly in a Mac terminal. If you are using a Windows computer, use an appropriate Windows SSH client, like Putty or another SSH client*
+> *Note - the above format is usable directly in a Mac terminal. If you are using a Windows computer, use an appropriate Windows SSH client, like Putty or another SSH client*
 
 For convenience, run all commands as root
 
