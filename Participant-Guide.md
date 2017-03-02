@@ -627,28 +627,32 @@ Paste this YAML into the Advanced Editor
 version: 2
 services:
   wordpress:
-	image: "wordpress:4.5.2"
-	ports:
-  	- 80:80/tcp
-	environment:
-  	- OCCS_PHASE_ID=1
-  	- "WORDPRESS_DB_HOST={{ proxy \"db:3306\" }}"
-  	- WORDPRESS_DB_PASSWORD=example
-  	- MYSQL_ROOT_PASSWORD=example
-  	- "OCCS_HEALTHCHECK_WORDPRESS_HTTP=tcp://:80/?timeout=10s&interval=30s"
-  	- "occs:description=This is a simple wordpress stack that can be deployed to multiple hosts. This example is provided as-is for educational purposes and should not be used in production.  This example also has persistent volumes"
-	volumes:
-  	- "/var/www/html:/var/www/html:rw"
+    image: "wordpress:4.5.2"
+    ports:
+      - "80:80/tcp"
+    environment:
+      - OCCS_PHASE_ID=1
+      - "occs:availability=per-tag"
+      - "occs:availability_context=wkr3"
+      - "WORDPRESS_DB_HOST={{ proxy \"db:3306\" }}"
+      - WORDPRESS_DB_PASSWORD=example
+      - MYSQL_ROOT_PASSWORD=example
+      - "OCCS_HEALTHCHECK_WORDPRESS_HTTP=tcp://:80/?timeout=10s&interval=30s"
+      - "occs:description=This is a simple wordpress stack that can be deployed to multiple hosts or multiple times on the same host. To find the deployed port, click into the container page for this service and located the Host Ports field. Then, on the Service Discovery page, use the host port to find the IP address of the host this service is deployed to. This example is provided as-is for educational purposes and should not be used in production."
+    volumes:
+      - "/var/www/html:/var/www/html:rw"
   db:
-	image: "mariadb:10.1.14"
-	ports:
-  	- 3306/tcp
-	environment:
-  	- OCCS_PHASE_ID=0
-  	- MYSQL_ROOT_PASSWORD=example
-  	- "OCCS_HEALTHCHECK_MYSQL=tcp://:3306/?timeout=10s&interval=30s"
-	volumes:
-  	- "/var/lib/mysql:/var/lib/mysql:rw"
+    image: "mariadb:10.1.14"
+    ports:
+      - 3306/tcp
+    environment:
+      - OCCS_PHASE_ID=0
+      - "occs:availability=per-tag"
+      - "occs:availability_context=wkr1"
+      - MYSQL_ROOT_PASSWORD=example
+      - "OCCS_HEALTHCHECK_MYSQL=tcp://:3306/?timeout=10s&interval=30s"
+    volumes:
+      - "/var/lib/mysql:/var/lib/mysql:rw"
 ```
 
 The YAML above has the addition of volumes configured for both the Wordpress and the Database highlighted in yellow, that will be mounted to the host volume where these containers are running to persist data from the database, blog images and Wordpress themes.
