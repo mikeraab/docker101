@@ -225,13 +225,14 @@ Revisit the Container Cloud Service UI
 
 > *Is the container easier to find now, especially that there is context to the name of the container?*
 
-> *Notice how you can Stop and Remove the container, directly from the UI*
+> *Notice how you can Stop and Remove the container, directly from the UI.*
 
-Feel free to Stop and Remove the container.  We are done with this part of the HOL.
-
+Stop and Remove the container: 
 
 <img src=images/008-stop-container.png />
 ***
+We are done with this part of the HOL.
+
 ## Build Your Own Image
 
 About DockerFiles
