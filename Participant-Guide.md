@@ -2,13 +2,13 @@
 
 ### Table of Contents:
 
-1. [What is a Container?  What is Docker?](../docker101/blob/master/Participant-Guide.md#what-is-a-container-what-is-docker)
+1. [What is a Container?  What is Docker?](../Participant-Guide.md#what-is-a-container-what-is-docker)
 
-2. [Verify Docker Engine Install](../docker101/blob/master/Participant-Guide.md#verify-docker-engine-install)
+2. [Verify Docker Engine Install](../Participant-Guide.md#verify-docker-engine-install)
 
-3. [Run Your First Container](../docker101/blob/master/Participant-Guide.md#run-your-first-container)
+3. [Run Your First Container](../Participant-Guide.md#run-your-first-container)
 
-4. [Docker Images and Docker Hub](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#docker-images-and-the-docker-hub)
+4. [Docker Images and Docker Hub](../Participant-Guide.md#docker-images-and-the-docker-hub)
 
 5. [Stop and Re-run Your Container with a More Descriptive Name](https://gist.github.com/mikeraab/6a8c64ce3ebb81f4f8c886209a78e8f1#stop-and-re-run-your-container-with-a-more-descriptive-name)
 
