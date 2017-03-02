@@ -923,11 +923,11 @@ Visit the host’s IP on port 8080 and observe your changes and a new Hello Eart
 
 [Oracle Container Registry Docs](http://docs.oracle.com/en/cloud/iaas/container-cloud/index.html)
 
-OCCS Blogs:
+Oracle Blogs:
 
-[https://community.oracle.com/community/cloud_computing/containers-docker-and-microservices](https://community.oracle.com/community/cloud_computing/containers-docker-and-microservices)
+[Containers, Docker and Microservices](https://community.oracle.com/community/cloud_computing/containers-docker-and-microservices)
 
-[https://community.oracle.com/community/cloud_computing/infrastructure-as-a-service-iaas/oracle-container-cloud-service](https://community.oracle.com/community/cloud_computing/infrastructure-as-a-service-iaas/oracle-container-cloud-service)
+[Container Cloud Service Blog](https://community.oracle.com/community/cloud_computing/infrastructure-as-a-service-iaas/oracle-container-cloud-service)
 
 **DONE**
 
