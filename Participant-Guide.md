@@ -782,7 +782,6 @@ The data persisted because it was written to the host volume, and then re-joined
 
 > *Note - you can specify the exact hosts to run on when the Wordpress Stack is deployed by using a host tag.  This will automatically set the host constraint to host tag and no adjustment will be needed at deployment time.* 
 
-**need to find resource for above**
 
 ## Running Applications Across Multiple Docker Hosts
 
@@ -813,9 +812,8 @@ If you have not experienced deploying the Stack across multiple hosts, and you d
 
 The template arguments and service discovery provide a consistent usage paradigm for the successful deployment of multi-container Stacks across multiple hosts.
 
-More information on the template function can be found in the docs, here:
-
-**enter docs URL for templates**
+More information on the template function can be found in the docs, here: 
+http://docs.oracle.com/en/cloud/iaas/container-cloud/contu/template-functions-and-arguments.html 
 
 ## CI/CD Integration with GitHub, DockerHub and OCCS
 
