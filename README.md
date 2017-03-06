@@ -6,8 +6,9 @@ https://developer.oracle.com/code
 
 ### Pre-work:
 
+* Register for an Oracle Code Event: https://developer.oracle.com/code
 
-* Request An Oracle Cloud Trial https://cloud.oracle.com
+* Request An Oracle Cloud Trial: https://cloud.oracle.com
 
 * Provision An Instance of Oracle Container Cloud Service
 
