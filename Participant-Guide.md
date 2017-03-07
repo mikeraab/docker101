@@ -28,7 +28,7 @@
 
 13. [Summary and More Resources](../master/Participant-Guide.md#summaryrecap-pointer-to-further-resources)
 
-### Summary - This hands-on-lab is targeted at beginners with no prior experience and will cover the basics of using Docker.  Participants will advance concepts and skills from Docker using CLI on a Docker Host/VM to higher level tools, such as Github, Docker Hub and Oracle Container Cloud Service (OCCS).
+### Summary - This hands-on-lab (HOL) is targeted at beginners with no prior experience and will cover the basics of using Docker.  Participants will advance concepts and skills from Docker using CLI on a Docker Host/VM to higher level tools, such as Github, Docker Hub and Oracle Container Cloud Service (OCCS).
 
 ### Pre-requisites:
 
@@ -77,13 +77,13 @@ VM vs Container
 ***
 While containers may sound like a virtual machine (VM), the two are distinct technologies. With VMs each virtual machine includes the application, the necessary binaries and libraries and the **entire guest operating system.**
 
-Whereas, Containers include the application, all of its dependencies, but share the kernel with other containers and are not tied to any specific infrastructure, other than having the Docker engine installed on it’s host – containers run on any computer, infrastructure* and cloud.  
+Whereas, Containers include the application, all of its dependencies, but share the kernel with other containers and are not tied to any specific infrastructure, other than having the Docker engine installed on it’s host – allowing containers to run on almost any computer, infrastructure and cloud.  
 
 > *Note - at this time, Windows and Linux containers require that they run on their respective kernel base, therefore, Windows containers cannot run on Linux hosts and vice versa.*
 
 ## Verify Docker Engine Install
 
-The lab will leverage a pre-built Oracle Container Cloud Service (OCCS) instance for convenience and to utilize its UI to verify some of the exercises.  You should have already provisioned your OCCS instance as part of the prerequisites for this workshop.  
+The lab will leverage a pre-built Oracle Container Cloud Service (OCCS) instance for convenience and to utilize its pre-built Linux VM, Docker Engine and UI.  You should have already provisioned your OCCS instance as part of the prework for this HOL.  
 
 The first step will be to login to one of the OCCS "worker nodes", or Docker host, and verify the Docker installation and check the version.  A worker node is simply a Docker Host/VM that can run Docker containers.
 
