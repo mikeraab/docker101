@@ -690,7 +690,7 @@ Now Deploy the Wordpress persistent Stack:
 
 When the Wordpress Stack is deployed and running.  Make a note of the host locations for both the Wordpress and Database containers.  You will need these later when we re-deploy the Stack so the containers can persist their data on the same host for each container.  You will only need to do this if you have configured mulitiple worker nodes in your OCCS setup.
 
-<img src=images/030-wp-hosts.png />
+<img src=images/030-wp-hosts.jpg />
 ***
 
 Find the IP of the Wordpress container.  Click the Hostname for the Wordpress container:
