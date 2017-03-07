@@ -24,7 +24,7 @@
 
 11. [Running Applications Across Multiple Docker Hosts](../master/Participant-Guide.md#running-applications-across-multiple-docker-hosts)
 
-12. [CI/CD Integration with GitHub, DockerHub and OCCS](../master/Participant-Guide.md#cicd-integration-with-github-dockerhub-and-occs)
+12. [CI/CD Integration with GitHub, Docker Hub and OCCS](../master/Participant-Guide.md#cicd-integration-with-github-dockerhub-and-occs)
 
 13. [Summary and More Resources](../master/Participant-Guide.md#summaryrecap-pointer-to-further-resources)
 
