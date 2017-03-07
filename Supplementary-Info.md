@@ -2,7 +2,7 @@
 
 The Hand On Lab uses an Instance of Container Cloud Service, which provides a pre-build Docker Engine CLI environment, as well as the full Container Cloud Service Application.
 
-This document outlines alternate Docker Engine environment installs
+This document outlines alternate Docker Engine environment installs.
 
 ### Docker Engine on Windows
 
