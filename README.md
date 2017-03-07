@@ -1,16 +1,12 @@
-# Hands On Lab for Docker - Beginner level
-
-To be used at Oracle Code Events in 2017
-
-https://developer.oracle.com/code
+# Hands On Lab for Docker Containers - Beginner level
 
 ### Pre-work:
 
-* Register for an Oracle Code Event: https://developer.oracle.com/code
+1. Request An Oracle Cloud Trial for Container: https://cloud.oracle.com
 
-* Request An Oracle Cloud Trial: https://cloud.oracle.com
+2. Provision An Instance of Oracle Container Cloud Service
 
-* Provision An Instance of Oracle Container Cloud Service
-
-    * [see Youtube to watch a short video for setup and access](https://youtu.be/l3H-oMRcrGo) 
+    * [Easy to Follow Tutorial in this Blog](https://solutionsanz.blog/2017/01/16/occs-provisioning/)
+    * [Documentation](http://docs.oracle.com/en/cloud/iaas/container-cloud/contu/creating-oracle-container-cloud-service-instances.html#CONTU-GUID-6C53AF60-DD68-4B0E-9956-F387493519D7)
+    * [See Youtube to watch a short video for setup and access:](https://youtu.be/l3H-oMRcrGo) 
 
