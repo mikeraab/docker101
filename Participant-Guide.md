@@ -391,7 +391,7 @@ $ docker run username/docker-whale
 On the OCCS Registries Page, create and save a new Registry definition using your Docker hub account, email, username and password.  You can also add a description.
 
 ```
-Left Nav - Registries > New Registry Button > Enter the Details
+Left Nav - Registries > New Registry Button > Enter the Details > Save
 ```
 
 > *Note - that the URL for your Docker Hub repo/account should be in this format: index.docker.io/username*
@@ -476,7 +476,13 @@ Follow these steps to create a simple Wordpress stack referenced here:
 
 Here is a synopsis of the steps in the above URL:
 
-Use VI to create a file named docker-compose.yml that contains the following text:
+Use VI to create a file named docker-compose.yml
+
+```
+vi docker-compose.yml
+```
+
+that contains the following text:
 
 ```
 version: '2'
