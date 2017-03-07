@@ -790,7 +790,7 @@ Once the Deployment if running, healthy and green, navigate back to the blog pos
 
 The data persisted because it was written to the host volume, and then re-joined to the containers when they were re-deployed on the same hosts.
 
-> *Note - you can specify the exact hosts to run on when the Wordpress Stack is deployed by using a host tag.  This will automatically set the host constraint to host tag and no manual adjustment will be needed at deployment time.* 
+> *Note - you can specify the exact hosts to run on when the Wordpress Stack is deployed [by using a host tag](http://www.oracle.com/pls/topic/lookup?ctx=en/cloud/iaas/container-cloud&id=CONTU-GUID-FAEA715A-41DD-46B6-B1A6-DC53F0E0BCD3).  This will automatically set the host constraint to host tag and no manual adjustment will be needed at deployment time. [See how this would look in the YAML](..//master/tags.jpg)* 
 
 
 ## Running Applications Across Multiple Docker Hosts
