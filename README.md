@@ -5,7 +5,7 @@
 1. Request An Oracle Cloud Trial for Container: https://cloud.oracle.com
 
 2. Provision An Instance of Oracle Container Cloud Service 
-  > *(It is very important that this is completed before starting the Hands On Lab, or you will not have time to finish the excersises within a 2 hour timeframe.)*
+  > *It is very important that this is completed before starting the Hands On Lab, or you will not have time to finish the excersises within a 2 hour timeframe.*
 
     * [Easy to Follow Tutorial in this Blog](https://solutionsanz.blog/2017/01/16/occs-provisioning/)
     
