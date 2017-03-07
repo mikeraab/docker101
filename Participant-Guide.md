@@ -87,7 +87,7 @@ The lab will leverage a pre-built Oracle Container Cloud Service (OCCS) instance
 
 The first step will be to login to one of the OCCS "worker nodes", or Docker host, and verify the Docker installation and check the version.  A worker node is simply a Docker Host/VM that can run Docker containers.
 
-First SSH into a Worker Node in your Pre-built ContainerCS instance using the SSH key that you used when you provisioned the OCCS instance. 
+First SSH into a Worker Node in your Pre-built ContainerCS instance using the SSH key that you used when you created the OCCS instance. 
 
 To find a Worker Node IP address, login to your Oracle Cloud My Services Portal and use one of the Public IPs from a Worker Node in the Container Cloud Service Console:
 
@@ -128,7 +128,7 @@ Run Docker’s Hello-world example
 $ docker run hello-world
 ```
 
-Since the "hello-world" image is not available locally on the host, the command automatically pulls the hello-world image from the public Docker Hub and runs the container in the foreground.
+Since the "hello-world" image is not available locally on the host, the command automatically pulls the hello-world image from the public Docker Hub image repository and runs the container in the foreground.
 
 **Congratulations, you have just run your first Docker container!**
 
@@ -140,7 +140,7 @@ $ docker ps -a
 
 ## Docker Images and the Docker Hub
 
-**Browse to a public image on Docker Hub.  Run it.**
+**Browse to another public image Helloworld example on Docker Hub.  Run it.**
 
 Open a browser and go to this URL:
 
@@ -154,13 +154,13 @@ Pull the image from the Docker Hub Registry
 $ docker pull karthequian/helloworld:latest
 ```
 
-Copy/Paste the Docker Run command from the Docker Hub page and add a -d option so the container runs in "detached" mode (as opposed to the foreground).  This frees up your terminal window.
+Copy/Paste the Docker Run command from the Docker Hub page and add a -d option so the container runs in "detached" mode (as opposed to the foreground mode in the last exercise).  This frees up your terminal window.
 
 ```
 $ docker run -d -p 80:80/tcp "karthequian/helloworld:latest"
 ```
 
-Explore the Helloworld app in the browser.  Navigate to the IP of the Docker Host where it is running and note the number of visits.  (The IP is the same as the Host that you are SSH’d into http://host_ip):
+Explore this Helloworld app in the browser.  Navigate to the IP of the Docker Host where it is running and note the number of visits.  (The IP is the same as the Host that you are SSH’d into http://host_ip):
 
 
 <img src=images/004-hello-world.png />
@@ -227,7 +227,7 @@ Revisit the Container Cloud Service UI
 
 > *Notice how you can Stop and Remove the container, directly from the UI.*
 
-Stop and Remove the container: 
+Stop and Remove the container using the Buttons in the UI: 
 
 <img src=images/008-stop-container.png />
 ***
