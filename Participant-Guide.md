@@ -390,6 +390,10 @@ $ docker run username/docker-whale
 
 On the OCCS Registries Page, create and save a new Registry definition using your Docker hub account, email, username and password.  You can also add a description.
 
+```
+Left Nav - Registries > New Registry Button > Enter the Details
+```
+
 > *Note - that the URL for your Docker Hub repo/account should be in this format: index.docker.io/username*
 
 > *Clicking the "Validate" button will show a green banner, indicating a successful Docker Login to the account*
@@ -401,7 +405,7 @@ On the OCCS Registries Page, create and save a new Registry definition using you
 Create a new Service with your Docker Run command
 
 ```
-Left nav - Services > New Service Button
+Left Nav - Services > New Service Button
 ```
 
 Copy and Paste this docker run command into the Docker Run tab in the new Service.  Be sure to substitute your Docker username to pull from your repo on Docker Hub.
