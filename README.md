@@ -10,7 +10,7 @@
     * [Easy to Follow Setup and Access Tutorial in this Blog](https://solutionsanz.blog/2017/01/16/occs-provisioning/)
     
   Other resources:
-    * [Documentation](http://docs.oracle.com/en/cloud/iaas/container-cloud/contu/creating-oracle-container-cloud-service-instances.html#CONTU-GUID-6C53AF60-DD68-4B0E-9956-F387493519D7)
+    * [Documentation for Setup and Access](http://docs.oracle.com/en/cloud/iaas/container-cloud/contu/creating-oracle-container-cloud-service-instances.html#CONTU-GUID-6C53AF60-DD68-4B0E-9956-F387493519D7)
     * [See Youtube to watch a short video for setup and access:](https://youtu.be/l3H-oMRcrGo) 
 
 ### Use the Participant Guide to complete the Hands On Lab:
