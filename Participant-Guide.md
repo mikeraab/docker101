@@ -547,7 +547,7 @@ Repeat for next container
 
 The objective of this section is to understand port mappings and dynamic port allocations.
 
-**For the remainder of the HOL, we will be using the Container Cloud Service**
+**For the remainder of the HOL, we will be using Container Cloud Service**
 
 Login to your Container Cloud Service instance
 
@@ -667,7 +667,7 @@ services:
       - "/var/lib/mysql:/var/lib/mysql:rw"
 ```
 
-The YAML above has the addition of volumes configured for both the Wordpress and the Database highlighted in yellow, that will be mounted to the host volume where these containers are running to persist data from the database, blog images and Wordpress themes.
+The YAML above has the addition of volumes configured for both the Wordpress and the Database, that will be mounted to the host volume where these containers are running to persist data from the database, blog images and Wordpress themes.
 
 Notice that the volume in the container is listed first. Then the host volume, with the option "rw" for read and write:
 <img src=images/027-paste-yaml.png />
@@ -688,7 +688,7 @@ Now Deploy the Wordpress persistent Stack:
 <img src=images/029-deploy-wp.png />
 ***
 
-When the Wordpress Stack is deployed and running.  Make a note of the host locations for both the Wordpress and Database containers.  You will need these later when we re-deploy the Stack so the containers can persist their data on the same host for each container.
+When the Wordpress Stack is deployed and running.  Make a note of the host locations for both the Wordpress and Database containers.  You will need these later when we re-deploy the Stack so the containers can persist their data on the same host for each container.  You will only need to do this if you have configured mulitiple worker nodes in your OCCS setup.
 
 <img src=images/030-wp-hosts.png />
 ***
@@ -742,7 +742,7 @@ Click on the "Permalink" to navigate to the blog post:
 <img src=images/039-permalink.png />
 ***
 
-Copy the URL of the blog post and keep this in your notes, as you will need it later:
+Copy the Permalink URL of the blog post and keep this in your notes, as you will need it later:
 
 <img src=images/040-view-blog.png />
 ***
@@ -790,7 +790,7 @@ Once the Deployment if running, healthy and green, navigate back to the blog pos
 
 The data persisted because it was written to the host volume, and then re-joined to the containers when they were re-deployed on the same hosts.
 
-> *Note - you can specify the exact hosts to run on when the Wordpress Stack is deployed by using a host tag.  This will automatically set the host constraint to host tag and no adjustment will be needed at deployment time.* 
+> *Note - you can specify the exact hosts to run on when the Wordpress Stack is deployed by using a host tag.  This will automatically set the host constraint to host tag and no manual adjustment will be needed at deployment time.* 
 
 
 ## Running Applications Across Multiple Docker Hosts
@@ -891,8 +891,6 @@ Create a new line after </body> on line 15, and add this line for an image of th
 
 Check to see that it looks just like this (edits are highlighted in the red boxes):
 
-
-**REDO THIS IMAGE***
 
 <img src=images/051-index-edit.png />
 ***
