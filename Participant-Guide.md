@@ -211,7 +211,7 @@ Check to be sure that the container has been removed
 $ docker ps -a
 ```
 
-> *Note, containers can be stopped and removed by using their name **(if there are no dependent image layers)**, their long id or their short id*
+> *Note - containers can be stopped and removed by using their name **(if there are no dependent image layers)**, their long id or their short id*
 
 Now run the container with a more descriptive name, such as "helloworld_app"
 
@@ -419,7 +419,7 @@ docker run \
 ***
 Enter a name for the new Service, such as "whale" and Save the new Service
 
-To run the Whale service, just click the Deploy Button next to Whale service, in the list of available Services, then click Deploy again and accept the default orchestration options
+To run the Whale service, just click the Deploy Button next to Whale service, in the list of available Services, then click Deploy again and accept the default orchestration options:
 
 <img src=images/013-deploy-service.png />
 ***
@@ -428,12 +428,12 @@ The Service will be deployed, run and stop, just like when we ran in the termina
 
 > *Note - normally, Deployments would be self-healing and restart a stopped container.  In this case, we choose not to automatically restart the container with the addition of a one-time run environment variable: -e="OCCS_REMOVE_ON_DIE=0" \*
 
-Click on the container name
+Click on the container name:
 
 <img src=images/014-select-container.png />
 ***
 
-Then click the "View Logs" button to see the whale’s comments
+Then click the "View Logs" button to see the whale’s comments:
 
 <img src=images/015-view-whale-comments.png />
 ***
