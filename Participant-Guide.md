@@ -54,8 +54,6 @@
 
 ## What is a Container? What is Docker?
 
-Basic intro to containers and Docker.  Brief history of Linux Containers.  Basic Differences with Virtualization.
-
 A container is a runtime instance of a docker image.
 
 [https://docs.docker.com/engine/reference/glossary/#/container](https://docs.docker.com/engine/reference/glossary/#/container)
