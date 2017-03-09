@@ -6,15 +6,16 @@
 
 2. Provision An Instance of **Oracle Container Cloud Service** 
   > *It is very important that this is completed before starting the Hands On Lab, or you will not have time to finish the excersises within a 2 hour timeframe.*
+  
+  Here are some easy guides to help you setup your first Container Cloud Service instance after you get your Oracle Cloud trial:
+  
+  * [Short Youtube Video for Setup and Access of Container Cloud Service:](https://youtu.be/l3H-oMRcrGo) 
 
+Or check these other two resources for guidance on setup and access:
     * [Easy to Follow Setup and Access Tutorial in this Blog](https://solutionsanz.blog/2017/01/16/occs-provisioning/)
     
-    Begin where you see this image in the blog:
-    <img src=https://solutionsanz.files.wordpress.com/2017/01/011617_1003_firstexperi2.png?w=640 />
-    
-  Other resources:
-    * [Documentation for Setup and Access](http://docs.oracle.com/en/cloud/iaas/container-cloud/contu/creating-oracle-container-cloud-service-instances.html#CONTU-GUID-6C53AF60-DD68-4B0E-9956-F387493519D7)
-    * [See Youtube to watch a short video for setup and access:](https://youtu.be/l3H-oMRcrGo) 
+    * [Oracle Documentation for Setup and Access](http://docs.oracle.com/en/cloud/iaas/container-cloud/contu/creating-oracle-container-cloud-service-instances.html#CONTU-GUID-6C53AF60-DD68-4B0E-9956-F387493519D7)
+
 
 ### Use the Participant Guide to complete the Hands On Lab:
 
