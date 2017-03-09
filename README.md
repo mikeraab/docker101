@@ -1,4 +1,4 @@
-# Hands On Lab for Docker Containers - Beginner level
+# Hands On Lab for Docker Containers - Intermediate
 
 ### Pre-work:
 
@@ -22,4 +22,4 @@
 
 The [Participant Guide](../master/Participant-Guide.md) walks you through a step by step Hands On Lab session, expected to take about 2 hours.   
 
-This hands-on-lab is targeted at beginners with no prior experience and will cover the basics of using Docker. Participants will advance concepts and skills from Docker using CLI on a Docker Host/VM to higher level tools, such as Github, Docker Hub and Oracle Container Cloud Service (OCCS).
+This hands-on-lab is targeted at Oracle Trial users with little prior experience and will cover the basics of using Docker. Participants will advance concepts and skills from Docker using CLI on a Docker Host/VM to higher level tools, such as Github, Docker Hub and Oracle Container Cloud Service (OCCS).
