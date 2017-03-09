@@ -1,4 +1,4 @@
-# Docker Containers 101 - Hands-On-Lab for Beginners - Participant Guide
+# Docker Containers 101 - Hands-On-Lab
 
 ### Table of Contents:
 
@@ -28,7 +28,7 @@
 
 13. [Summary and More Resources](../master/Participant-Guide.md#summaryrecap-pointer-to-further-resources)
 
-### Summary - This hands-on-lab (HOL) is targeted at beginners with no prior experience and will cover the basics of using Docker.  Participants will advance concepts and skills from Docker using CLI on a Docker Host/VM to higher level tools, such as Github, Docker Hub and Oracle Container Cloud Service (OCCS).
+### Summary - This hands-on-lab (HOL) is targeted at Oracle Trial users with little prior experience and will cover the basics of using Docker. Participants will advance concepts and skills from Docker using CLI on a Docker Host/VM to higher level tools, such as Github, Docker Hub and Oracle Container Cloud Service (OCCS).
 
 ### Pre-requisites:
 
