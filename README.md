@@ -9,7 +9,7 @@
   
   Here are some easy guides to help you setup your first Container Cloud Service instance after you get your Oracle Cloud trial:
   
-  * [Short Youtube Video for Setup and Access of Container Cloud Service:](https://youtu.be/l3H-oMRcrGo) 
+  * [Short Youtube Video Shows Setup and Access of Container Cloud Service:](https://youtu.be/l3H-oMRcrGo) 
 
   Or use these other two resources for guidance on setup and access:
   
