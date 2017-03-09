@@ -7,7 +7,7 @@
 2. Provision An Instance of **Oracle Container Cloud Service** 
   > *It is very important that this is completed before starting the Hands On Lab, or you will not have time to finish the excersises within a 2 hour timeframe.*
   
-  Here are some easy guides to help you setup your first Container Cloud Service instance after you get your Oracle Cloud trial:
+Here are some easy guides to help you setup your first Container Cloud Service instance after you get your Oracle Cloud trial:
   
   * [Short Youtube Video for Setup and Access of Container Cloud Service:](https://youtu.be/l3H-oMRcrGo) 
 
