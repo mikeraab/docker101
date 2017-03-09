@@ -1,18 +1,16 @@
 # Supplementary Info
 
-The Hand On Lab uses an Instance of Container Cloud Service, which provides a pre-build Docker Engine CLI environment, as well as the full Container Cloud Service Application.
+## This document outlines alternate Docker Engine environment installs
 
-This document outlines alternate Docker Engine environment installs.
-
-### Docker Engine on Windows
+### Docker Engine on Windows:
 
 * [See Install Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
 
-### Docker Engine on Mac
+### Docker Engine on Mac:
 
 * [See Install Docker for Mac](https://docs.docker.com/docker-for-mac/install/)
 
-### Docker Engine on Oracle Linux
+### Docker Engine on Oracle Linux:
 
 1. [Request An Oracle Cloud Trial](https://cloud.oracle.com/tryit)
 
