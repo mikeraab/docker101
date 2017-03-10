@@ -667,7 +667,7 @@ services:
 
 The YAML above has the addition of volumes configured for both the Wordpress and the Database, that will be mounted to the host volume where these containers are running to persist data from the database, blog images and Wordpress themes.
 
-Notice that the volume in the container is listed first. Then the host volume, with the option "rw" for read and write:
+Notice that the volume in the host is listed first. Then the container volume, with the option "rw" for read and write:
 <img src=images/027-paste-yaml.png />
 ***
 
