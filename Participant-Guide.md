@@ -67,12 +67,13 @@ Containers have been around for many years.  Docker created a technology that wa
 History of Linux Containers
 
 <img src=images/002-container-history.png />
-***
+
 
 VM vs Container
 
 <img src=images/002-vm-vs-container.png />
-***
+
+
 While containers may sound like a virtual machine (VM), the two are distinct technologies. With VMs each virtual machine includes the application, the necessary binaries and libraries and the **entire guest operating system.**
 
 Whereas, Containers include the application, all of its dependencies, but share the kernel with other containers and are not tied to any specific infrastructure, other than having the Docker engine installed on it’s host – allowing containers to run on almost any computer, infrastructure and cloud.  
@@ -90,7 +91,8 @@ First SSH into a Worker Node in your Pre-built ContainerCS instance using the SS
 To find a Worker Node IP address, login to your Oracle Cloud My Services Portal and use one of the Public IPs from a Worker Node in the Container Cloud Service Console:
 
 <img src=images/003-worker-ip.png />
-***
+
+
 Modify the below command with your Worker Node IP and the path for your private key:
 
 ```
@@ -162,7 +164,8 @@ Explore this Helloworld app in the browser.  Navigate to the IP of the Docker Ho
 
 
 <img src=images/004-hello-world.png />
-***
+
+
 You are now actually using an application that is in the Docker container.  Refresh the browser and observe how the visits counts increments.  This is a live application. A simple example, but an example of the experience of using an application running in a container, which is no different than if it was not running in a container.
 
 > *Makes you wonder about how many apps that you are using on a day to day basis, may indeed be running in a Docker container?*
@@ -174,17 +177,20 @@ You will need to login to your instance of Container Cloud Service.
 Find the login on the Container Cloud Services Console page in your Oracle Public Cloud trial.  Click on "Container Console":
 
 <img src=images/005-occs-access.png />
-***
+
+
 Login to Container Cloud Service with the credentials used when you created the instance:
 
 <img src=images/006-occs-login.png />
-***
+
+
 Navigate via the Left Hand nav to the Containers page and find the container that is running the Helloworld app.
 
 If you have arrived at a page that looks like the below, you will have arrived at the right page:
 
 <img src=images/007-stoic-wilson.png />
-***
+
+
 Notice that Docker has assigned a container name "stoic_wilson" in the above?  What name did Docker give your container?  Remember this name, as we will use it in a bit.
 
 > *Note - unless you specify a container name, Docker will assign a similar 2 part name automatically*
@@ -228,7 +234,8 @@ Revisit the Container Cloud Service UI
 Stop and Remove the container using the Buttons in the UI: 
 
 <img src=images/008-stop-container.png />
-***
+
+
 We are done with this part of the HOL.
 
 ## Build Your Own Image
@@ -307,7 +314,7 @@ Notice the output in the terminal.  Re-run the image a couple of times, as the c
 By contrast, navigate to one of the stopped docker-whale containers in your OCCS instance and select the "View Logs" button to easily view the container logs: 
 
 <img src=images/009-container-logs.png />
-***
+
 
 ## Registries
 
@@ -346,7 +353,7 @@ Navigate to your account page in Docker Hub via this URL, substituting your user
 Do you see the image that you pushed?
 
 <img src=images/010-docker-hub.png />
-***
+
 
 Now, remove the local image and run the image from the registry
 
@@ -398,7 +405,7 @@ Left Nav - Registries > New Registry Button > Enter the Details > Save
 
 
 <img src=images/011-add-registry.png />
-***
+
 
 Create a new Service with your Docker Run command
 
@@ -416,13 +423,14 @@ docker run \
 
 
 <img src=images/012-new-service.png />
-***
+
+
 Enter a name for the new Service, such as "whale" and Save the new Service
 
 To run the Whale service, just click the Deploy Button next to Whale service, in the list of available Services, then click Deploy again and accept the default orchestration options:
 
 <img src=images/013-deploy-service.png />
-***
+
 
 The Service will be deployed, run and stop, just like when we ran in the terminal.
 
@@ -431,12 +439,12 @@ The Service will be deployed, run and stop, just like when we ran in the termina
 Click on the container name:
 
 <img src=images/014-select-container.png />
-***
+
 
 Then click the "View Logs" button to see the whale’s comments:
 
 <img src=images/015-view-whale-comments.png />
-***
+
 
 ## Introduction to Docker Compose
 
@@ -554,7 +562,7 @@ Navigate to the Hello World Application example service on the Services page
 Click the edit button next to the Hello World service and scroll down to the port settings:
 
 <img src=images/016-edit-helloworld.png />
-***
+
 
 Notice that the default host port setting is 9000, which means that the container port 80 is mapped to the host port 9000.  If this service is deployed (docker run), host port 9000 on the particular Worker node would be consumed, and no more of this same container could run on that host as it is currently configured.
 
@@ -563,46 +571,46 @@ To get past this limitation, Docker has a feature that allows for containers to 
 To modify the service to use dynamic ports, edit the port and remove port 9000 from the host and leave it blank.
 
 <img src=images/017-remove-port.png />
-***
+
 
 Save the port edit and use "Save As" to create a new Service called Hello World Dynamic.  Save the new service.
 
 <img src=images/018-save-as-dyn.png />
-***
+
 
 Now deploy the new Hello World Dynamic service and add 3 for the Quantity of containers and set a "Constraint" to deploy this on only one of your hosts, as per the below screenshot.  Once the options are set, click deploy.
 
 <img src=images/019-deploy-hw-dyn.png />
-***
+
 
 The deployment will automatically run 3 Hello World containers, each running on different dynamic ports on the same Docker Host.
 
 <img src=images/020-hw-hosts.png />
-***
+
 
 **Now, use your browser to navigate to the IP and Port of one of the containers.**
 
 To find the IP of the Host, click on the host link under Hostname:
 
 <img src=images/021-2-host.png />
-***
+
 
 From this screen, copy the Public IP address shown here:
 <img src=images/021-host-ip.png />
-***
+
 
 Now, click on one of the 3 running Hello World containers running on this host:
 <img src=images/022-dyn-container.png />
-***
+
 
 Make a note of the Host port, in this example it's 32771 in the below screenshot:
 <img src=images/023-container-port.png />
-***
+
 
 
 Now, navigate with your browser to that IP and Host Port:
 <img src=images/024-dyn-port-hw.png />
-***
+
 
 
 You can then do the same for each of the 3 containers.  This Docker feature provides a valuable advantage of **running multiple copies of the same application on the same host**, increasing efficiency.
@@ -620,16 +628,16 @@ So let's explore how you might persist data with a Wordpress Stack within Contai
 In your OCCS instance, go to the Stacks page.  Here you will see 2 example Wordpress Stacks:
 
 <img src=images/025-1-stacks.png />
-***
+
 
 But lets create a new Wordpress Stack from the below YAML that has some included volume statements. Click the "New Stack" button:
 <img src=images/025-2-newstack.png />
-***
+
 
 Click the "Advanced Editor" link:
 
 <img src=images/026-advanced-editor.png />
-***
+
 
 Paste this YAML into the Advanced Editor
 
@@ -669,7 +677,7 @@ The YAML above has the addition of volumes configured for both the Wordpress and
 
 Notice that the volume in the host is listed first. Then the container volume, with the option "rw" for read and write:
 <img src=images/027-paste-yaml.png />
-***
+
 
 > *Note - if "ro" was use, this would be for read only.*
 
@@ -677,27 +685,27 @@ Notice that the volume in the host is listed first. Then the container volume, w
 Save the Advanced Editor and then give the Stack a name, Wordpress persistent.  Then save the new Stack:
 
 <img src=images/028-save-wp-stack.png />
-***
+
 
 Once saved, you will see it listed and you can deploy this new Stack
 
 Now Deploy the Wordpress persistent Stack:
 
 <img src=images/029-deploy-wp.png />
-***
+
 
 When the Wordpress Stack is deployed and running.  Make a note of the host locations for both the Wordpress and Database containers.  You will need these later when we re-deploy the Stack so the containers can persist their data on the same host for each container.  You will only need to do this if you have configured mulitiple worker nodes in your OCCS setup.
 
 <img src=images/030-wp-hosts.jpg />
-***
+
 
 Find the IP of the Wordpress container.  Click the Hostname for the Wordpress container:
 <img src=images/031-wp-host-ip.png />
-***
+
 
 Copy the IP address:
 <img src=images/032-wp-host-ip.png />
-***
+
 
 In your browser navigate to Host_IP and append it with the Wordpress initialization URL: /wp-admin/install.php.  
 
@@ -708,57 +716,57 @@ In your browser navigate to Host_IP and append it with the Wordpress initializat
 First, select your language:
 
 <img src=images/033-wp-setup1.png />
-***
+
 
 Setup the Wordpress login details.  Be sure to keep the Username and Password in your notes:
 
 <img src=images/034-wp-setup2.png />
-***
+
 
 Click the "log In" button to log into to Wordpress:
 
 <img src=images/034-wp-setup2.png />
-***
+
 
 Login using the credentials you created earlier:
 
 <img src=images/036-wp-login2.png />
-***
+
 
 Select "Write your first blog post" in the Next Steps section:
 
 <img src=images/037-write-blog.png />
-***
+
 
 Create a sample blog post.  Include an image of your choosing, if you would like and click Publish:
 
 <img src=images/038-publish-blog.png />
-***
+
 
 Click on the "Permalink" to navigate to the blog post:
 
 <img src=images/039-permalink.png />
-***
+
 
 Copy the Permalink URL of the blog post and keep this in your notes, as you will need it later:
 
 <img src=images/040-view-blog.png />
-***
+
 
 Back in OCCS, use the "Stop" button to stope the Wordpress deployment, which will stop each container in an orderly fashion:
 
 <img src=images/041-stop-wp.png />
-***
+
 
 Use the "Remove" button to remove the deployment and remove all containers:
 
 <img src=images/042-remove-wp.png />
-***
+
 
 Verify in the browser that the Wordpress blog post is gone by refreshing the page:
 
 <img src=images/043-refresh.png />
-***
+
 
 Redeploy the Wordpress persistent Stack.  
 
@@ -767,24 +775,24 @@ Redeploy the Wordpress persistent Stack.
 Within the Deploy options, set the "Host Constraint" for the Wordpress container within the Orchestration for wordpress area:
 
 <img src=images/044-wp-constraint.png />
-***
+
 
 Then using the "+" icon in the UI, expose the Orchestration for db area and set the "Host Constraint" for the Database container:
 
 <img src=images/045-db-constraint.png />
-***
+
 
 > *Important - Verify that the Wordpress and Database containers are running and deployed on the **same hosts as before**.  If this is not the case, Stop and Remove the deployment and set the Host constraints again.  The containers must run on the same hosts to reconnect with the existing host volumes.*
 
 Select the "Deploy" button to deploy the Stack:
 
 <img src=images/046-wp-redeploy.png />
-***
+
 
 Once the Deployment if running, healthy and green, navigate back to the blog post URL that you noted, in your browser and refresh the page:
 
 <img src=images/047-refresh-blog.png />
-***
+
 
 The data persisted because it was written to the host volume, and then re-joined to the containers when they were re-deployed on the same hosts.
 
@@ -852,7 +860,7 @@ https://github.com/*username*/docker-images/blob/master/ContainerCloud/images/do
 On the Github page, click on the link for "Index.html":
 
 <img src=images/049-hw-index.png />
-***
+
 
 This is the HTML for the home page of the HelloWorld Demo from above.  
 
@@ -861,7 +869,7 @@ You are going to modify this Index.html to create a new "Hello Earth" page, this
 Edit the page via the pencil icon and make these changes:
 
 <img src=images/050-edit-index.png />
-***
+
 
 On line 8, change the background color to 
 
@@ -891,46 +899,46 @@ Check to see that it looks just like this (edits are highlighted in the red boxe
 
 
 <img src=images/051-index-edit.png />
-***
+
 
 Scroll Down and Commit your Changes.  Add a description and press the "Commit Changes" button:
 
 <img src=images/052-commit-index.png />
-***
+
 
 This will trigger a new automated build in Docker Hub, which will run the Dockerfile, which incorporates the new changes in index.html as part of the build process.  
 
 It will take a few minutes for this to complete in Docker Hub.  When it does, Success will be noted in the Status column:
 
 <img src=images/053-docker-build.png />
-***
+
 
 Back in Container Cloud service, click on the running container for the Hello-World-Demo:
 
 <img src=images/054-docker-hw.png />
-***
+
 
 Manually stop the container to trigger an automated restart of the Deployment:
 
 <img src=images/055-stop-hw.png />
-***
+
 
 Back on the Deployments page, this will cause the deployment to stop and restart.  The restart is automatic, so give it a few seconds to cycle:
 
 <img src=images/056-stopping-hw.png />
-***
+
 
 Once the deployment is restarted, verify the Host that the container is running on: 
 
 <img src=images/057-running-hw.png />
-***
+
 
 *Note - on multi-host OCCS instances, containers can restart anywhere in the resource pool, unless orchestrated to a specific host, by a specific method such as tag.*
 
 Visit the host’s IP on port 8080 and observe your changes and a new Hello Earth!
 
 <img src=images/058-hello-earth.png />
-***
+
 
 **Congratulations!**  You have successfully completed this Hands On Lab!
 
