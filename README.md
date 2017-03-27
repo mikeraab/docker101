@@ -1,5 +1,7 @@
 # Hands On Lab for Docker Containers - Intermediate
 
+**This lab covers some Docker basics and bridges the knowledge into Oracle Container Cloud Service**
+
 ### Pre-work:
 
 1. Request An **Oracle Cloud Trial**: https://cloud.oracle.com/tryit
